@@ -1,1 +1,0 @@
-ttfautohint -l 8 -r 50 -G 200 -x 0 -f none -w G -W
