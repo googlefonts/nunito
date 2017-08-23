@@ -1,8 +1,5 @@
 {
-.appVersion = "976";
-DisplayStrings = (
-/peseta
-);
+.appVersion = "1057";
 classes = (
 {
 automatic = 1;
@@ -10,7 +7,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright 2014 The Nunito Project Authors (contact@sansoxygen.com)";
+copyright = "Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/NunitoFont)";
 customParameters = (
 {
 name = license;
@@ -357,11 +354,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1089;
+value = 1088;
 },
 {
 name = winDescent;
-value = 279;
+value = 275;
 },
 {
 name = hheaAscender;
@@ -434,11 +431,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1089;
+value = 1088;
 },
 {
 name = winDescent;
-value = 279;
+value = 275;
 },
 {
 name = hheaAscender;
@@ -4022,7 +4019,7 @@ lib = {
 name = C;
 unicodes = (
 );
-width = 1353.8900;
+width = 1353.89001;
 };
 };
 components = (
@@ -29299,7 +29296,7 @@ lib = {
 name = c;
 unicodes = (
 );
-width = 956.1410;
+width = 956.14099;
 };
 };
 components = (
@@ -43499,7 +43496,7 @@ lib = {
 name = s;
 unicodes = (
 );
-width = 1006.7600;
+width = 1006.76001;
 };
 },
 {
@@ -112564,8 +112561,8 @@ value = 275;
 );
 interpolationWeight = 42;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = -0.117647;
 "9E718F8A-2CEA-4931-B05D-987794BD97DA" = 1.11765;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = -0.11765;
 };
 isItalic = 1;
 linkStyle = ExtraLight;
@@ -112581,8 +112578,8 @@ value = AddExtremes;
 );
 interpolationWeight = 61;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.0686275;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.931373;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.93137;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.06863;
 };
 isItalic = 1;
 linkStyle = Light;
@@ -112598,8 +112595,8 @@ value = AddExtremes;
 );
 interpolationWeight = 81;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.264706;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.735294;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.73529;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.26471;
 };
 isItalic = 1;
 name = Italic;
@@ -112613,8 +112610,8 @@ value = AddExtremes;
 );
 interpolationWeight = 101;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.460784;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.539216;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.53922;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.46078;
 };
 isItalic = 1;
 linkStyle = SemiBold;
@@ -112630,8 +112627,8 @@ value = AddExtremes;
 );
 interpolationWeight = 125;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.696078;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.303922;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.30392;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.69608;
 };
 isBold = 1;
 isItalic = 1;
@@ -112647,8 +112644,8 @@ value = AddExtremes;
 );
 interpolationWeight = 151;
 instanceInterpolations = {
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.04902;
 "E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.95098;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.0490196;
 };
 isItalic = 1;
 linkStyle = ExtraBold;
@@ -112664,8 +112661,8 @@ value = AddExtremes;
 );
 interpolationWeight = 178;
 instanceInterpolations = {
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.21569;
 "E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.21569;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.215686;
 };
 isItalic = 1;
 linkStyle = Black;
@@ -112817,8 +112814,8 @@ value = "Nunito Heavy";
 );
 interpolationWeight = 208;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.5098;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.509804;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.50980;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.50980;
 };
 isItalic = 1;
 name = Italic;

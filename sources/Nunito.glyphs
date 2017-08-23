@@ -1,5 +1,5 @@
 {
-.appVersion = "976";
+.appVersion = "1057";
 classes = (
 {
 automatic = 1;
@@ -7,7 +7,7 @@ code = "A Aacute Abreve Abreveacute Abrevedotbelow Abrevegrave Abrevehookabove A
 name = Uppercase;
 }
 );
-copyright = "Copyright 2014 The Nunito Project Authors (contact@sansoxygen.com)";
+copyright = "Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/NunitoFont)";
 customParameters = (
 {
 name = license;
@@ -35,8 +35,12 @@ name = "Use Typo Metrics";
 value = 1;
 },
 {
-name = note;
-value = "Vertical Metrics are not consistent across weights. Source file has inherited old VM from fonts.google.com, Nunito v1.000";
+name = "Disable Last Change";
+value = 1;
+},
+{
+name = "Use Line Breaks";
+value = 1;
 }
 );
 date = "2016-09-26 20:06:44 +0000";
@@ -47,79 +51,315 @@ familyName = Nunito;
 featurePrefixes = (
 {
 automatic = 1;
-code = "languagesystem DFLT dflt;\012languagesystem latn dflt;\012languagesystem latn NLD;\012languagesystem latn CAT;\012languagesystem latn ROM;\012languagesystem latn MOL;\012languagesystem latn KAZ;\012languagesystem latn TAT;\012languagesystem latn TRK;\012languagesystem latn CRT;\012languagesystem latn AZE;\012";
+code = "languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+languagesystem latn CAT;
+languagesystem latn ROM;
+languagesystem latn MOL;
+languagesystem latn KAZ;
+languagesystem latn TAT;
+languagesystem latn TRK;
+languagesystem latn CRT;
+languagesystem latn AZE;
+";
 name = Languagesystems;
 }
 );
 features = (
 {
 automatic = 1;
-code = "feature ccmp;\012feature locl;\012feature subs;\012feature sups;\012feature numr;\012feature dnom;\012feature frac;\012feature ordn;\012feature onum;\012feature case;\012feature salt;\012feature ss01;\012";
+code = "feature ccmp;
+feature locl;
+feature subs;
+feature sups;
+feature numr;
+feature dnom;
+feature frac;
+feature ordn;
+feature onum;
+feature case;
+feature salt;
+feature ss01;
+";
 name = aalt;
 },
 {
 automatic = 1;
-code = "lookup ccmp_Other_1 {\012	@CombiningTopAccents = [acutecomb brevecomb breveinvertedcomb caroncomb circumflexcomb commaturnedabovecomb dblgravecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];\012	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb strokeshortcomb];\012	sub [i j]' @CombiningTopAccents by [idotless jdotless];\012	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];\012	@Markscomb = [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb caroncomb brevecomb ringcomb tildecomb macroncomb hookabovecomb dblgravecomb breveinvertedcomb commaturnedabovecomb ringhalfleft ringhalfright brevecomb_acutecomb brevecomb_gravecomb brevecomb_hookabovecomb brevecomb_tildecomb circumflexcomb_acutecomb circumflexcomb_gravecomb circumflexcomb_hookabovecomb circumflexcomb_tildecomb];\012	@MarkscombCase = [dieresiscomb.case dotaccentcomb.case gravecomb.case acutecomb.case hungarumlautcomb.case circumflexcomb.case caroncomb.case brevecomb.case ringcomb.case tildecomb.case macroncomb.case hookabovecomb.case dblgravecomb.case breveinvertedcomb.case commaturnedabovecomb.case ringhalfleft.case ringhalfright.case brevecomb_acutecomb.case brevecomb_gravecomb.case brevecomb_hookabovecomb.case brevecomb_tildecomb.case circumflexcomb_acutecomb.case circumflexcomb_gravecomb.case circumflexcomb_hookabovecomb.case circumflexcomb_tildecomb.case];\012	sub @Markscomb @Markscomb' by @MarkscombCase;\012	sub @Uppercase @Markscomb' by @MarkscombCase;\012} ccmp_Other_1;\012\012lookup ccmp_Other_2 {\012	sub @Markscomb' @MarkscombCase by @MarkscombCase;\012	sub @MarkscombCase @Markscomb' by @MarkscombCase;\012} ccmp_Other_2;\012\012lookup ccmp_latn_1 {\012	script latn;\012	lookupflag 0;\012	sub brevecomb acutecomb by brevecomb_acutecomb;\012	sub brevecomb gravecomb by brevecomb_gravecomb;\012	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;\012	sub brevecomb tildecomb by brevecomb_tildecomb;\012	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;\012	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;\012	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;\012	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;\012	sub brevecomb.case acutecomb.case by brevecomb_acutecomb.case;\012	sub brevecomb.case gravecomb.case by brevecomb_gravecomb.case;\012	sub brevecomb.case hookabovecomb.case by brevecomb_hookabovecomb.case;\012	sub brevecomb.case tildecomb.case by brevecomb_tildecomb.case;\012	sub circumflexcomb.case acutecomb.case by circumflexcomb_acutecomb.case;\012	sub circumflexcomb.case gravecomb.case by circumflexcomb_gravecomb.case;\012	sub circumflexcomb.case hookabovecomb.case by circumflexcomb_hookabovecomb.case;\012	sub circumflexcomb.case tildecomb.case by circumflexcomb_tildecomb.case;\012} ccmp_latn_1;\012";
+code = "lookup ccmp_Other_1 {
+	@CombiningTopAccents = [acutecomb brevecomb breveinvertedcomb caroncomb circumflexcomb commaturnedabovecomb dblgravecomb dieresiscomb dotaccentcomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+	@CombiningNonTopAccents = [brevebelowcomb cedillacomb dieresisbelowcomb dotbelowcomb macronbelowcomb ogonekcomb horncomb strokeshortcomb];
+	sub [i j]' @CombiningTopAccents by [idotless jdotless];
+	sub [i j]' @CombiningNonTopAccents @CombiningTopAccents by [idotless jdotless];
+	@Markscomb = [dieresiscomb dotaccentcomb gravecomb acutecomb hungarumlautcomb circumflexcomb caroncomb brevecomb ringcomb tildecomb macroncomb hookabovecomb dblgravecomb breveinvertedcomb commaturnedabovecomb ringhalfleft ringhalfright brevecomb_acutecomb brevecomb_gravecomb brevecomb_hookabovecomb brevecomb_tildecomb circumflexcomb_acutecomb circumflexcomb_gravecomb circumflexcomb_hookabovecomb circumflexcomb_tildecomb];
+	@MarkscombCase = [dieresiscomb.case dotaccentcomb.case gravecomb.case acutecomb.case hungarumlautcomb.case circumflexcomb.case caroncomb.case brevecomb.case ringcomb.case tildecomb.case macroncomb.case hookabovecomb.case dblgravecomb.case breveinvertedcomb.case commaturnedabovecomb.case ringhalfleft.case ringhalfright.case brevecomb_acutecomb.case brevecomb_gravecomb.case brevecomb_hookabovecomb.case brevecomb_tildecomb.case circumflexcomb_acutecomb.case circumflexcomb_gravecomb.case circumflexcomb_hookabovecomb.case circumflexcomb_tildecomb.case];
+	sub @Markscomb @Markscomb' by @MarkscombCase;
+	sub @Uppercase @Markscomb' by @MarkscombCase;
+} ccmp_Other_1;
+
+lookup ccmp_Other_2 {
+	sub @Markscomb' @MarkscombCase by @MarkscombCase;
+	sub @MarkscombCase @Markscomb' by @MarkscombCase;
+} ccmp_Other_2;
+
+lookup ccmp_latn_1 {
+	script latn;
+	lookupflag 0;
+	sub brevecomb acutecomb by brevecomb_acutecomb;
+	sub brevecomb gravecomb by brevecomb_gravecomb;
+	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
+	sub brevecomb tildecomb by brevecomb_tildecomb;
+	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
+	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
+	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
+	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
+	sub brevecomb.case acutecomb.case by brevecomb_acutecomb.case;
+	sub brevecomb.case gravecomb.case by brevecomb_gravecomb.case;
+	sub brevecomb.case hookabovecomb.case by brevecomb_hookabovecomb.case;
+	sub brevecomb.case tildecomb.case by brevecomb_tildecomb.case;
+	sub circumflexcomb.case acutecomb.case by circumflexcomb_acutecomb.case;
+	sub circumflexcomb.case gravecomb.case by circumflexcomb_gravecomb.case;
+	sub circumflexcomb.case hookabovecomb.case by circumflexcomb_hookabovecomb.case;
+	sub circumflexcomb.case tildecomb.case by circumflexcomb_tildecomb.case;
+} ccmp_latn_1;
+";
 name = ccmp;
 },
 {
 automatic = 1;
-code = "script latn;\012language NLD;\012sub I J by I_J.loclNLD;\012sub i j by i_j.loclNLD;\012sub iacute j by iacute_j.loclNLD;\012sub Iacute J by Iacute_J.loclNLD;\012language CAT;\012sub l periodcentered' l by periodcentered.loclCAT;\012sub L periodcentered' L by periodcentered.loclCAT;\012language ROM;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language MOL;\012sub Scedilla by Scommaaccent;\012sub scedilla by scommaaccent;\012sub Tcedilla by Tcommaaccent;\012sub tcedilla by tcommaaccent;\012language KAZ;\012sub i by idotaccent;\012language TAT;\012sub i by idotaccent;\012language TRK;\012sub i by idotaccent;\012language CRT;\012sub i by idotaccent;\012language AZE;\012sub i by idotaccent;\012";
+code = "script latn;
+language NLD;
+sub I J by I_J.loclNLD;
+sub i j by i_j.loclNLD;
+sub iacute j by iacute_j.loclNLD;
+sub Iacute J by Iacute_J.loclNLD;
+language CAT;
+sub l periodcentered' l by periodcentered.loclCAT;
+sub L periodcentered' L by periodcentered.loclCAT;
+language ROM;
+sub Scedilla by Scommaaccent;
+sub scedilla by scommaaccent;
+sub Tcedilla by Tcommaaccent;
+sub tcedilla by tcommaaccent;
+language MOL;
+sub Scedilla by Scommaaccent;
+sub scedilla by scommaaccent;
+sub Tcedilla by Tcommaaccent;
+sub tcedilla by tcommaaccent;
+language KAZ;
+sub i by idotaccent;
+language TAT;
+sub i by idotaccent;
+language TRK;
+sub i by idotaccent;
+language CRT;
+sub i by idotaccent;
+language AZE;
+sub i by idotaccent;
+";
 name = locl;
 },
 {
 automatic = 1;
-code = "sub zero by zeroinferior;\012sub one by oneinferior;\012sub two by twoinferior;\012sub three by threeinferior;\012sub four by fourinferior;\012sub five by fiveinferior;\012sub six by sixinferior;\012sub seven by seveninferior;\012sub eight by eightinferior;\012sub nine by nineinferior;\012";
+code = "sub zero by zeroinferior;
+sub one by oneinferior;
+sub two by twoinferior;
+sub three by threeinferior;
+sub four by fourinferior;
+sub five by fiveinferior;
+sub six by sixinferior;
+sub seven by seveninferior;
+sub eight by eightinferior;
+sub nine by nineinferior;
+";
 name = subs;
 },
 {
 automatic = 1;
-code = "sub zero by zerosuperior;\012sub one by onesuperior;\012sub two by twosuperior;\012sub three by threesuperior;\012sub four by foursuperior;\012sub five by fivesuperior;\012sub six by sixsuperior;\012sub seven by sevensuperior;\012sub eight by eightsuperior;\012sub nine by ninesuperior;\012";
+code = "sub zero by zerosuperior;
+sub one by onesuperior;
+sub two by twosuperior;
+sub three by threesuperior;
+sub four by foursuperior;
+sub five by fivesuperior;
+sub six by sixsuperior;
+sub seven by sevensuperior;
+sub eight by eightsuperior;
+sub nine by ninesuperior;
+";
 name = sups;
 },
 {
 automatic = 1;
-code = "sub zero by zero.numr;\012sub one by one.numr;\012sub two by two.numr;\012sub three by three.numr;\012sub four by four.numr;\012sub five by five.numr;\012sub six by six.numr;\012sub seven by seven.numr;\012sub eight by eight.numr;\012sub nine by nine.numr;\012";
+code = "sub zero by zero.numr;
+sub one by one.numr;
+sub two by two.numr;
+sub three by three.numr;
+sub four by four.numr;
+sub five by five.numr;
+sub six by six.numr;
+sub seven by seven.numr;
+sub eight by eight.numr;
+sub nine by nine.numr;
+";
 name = numr;
 },
 {
 automatic = 1;
-code = "sub zero by zero.dnom;\012sub one by one.dnom;\012sub two by two.dnom;\012sub three by three.dnom;\012sub four by four.dnom;\012sub five by five.dnom;\012sub six by six.dnom;\012sub seven by seven.dnom;\012sub eight by eight.dnom;\012sub nine by nine.dnom;\012";
+code = "sub zero by zero.dnom;
+sub one by one.dnom;
+sub two by two.dnom;
+sub three by three.dnom;
+sub four by four.dnom;
+sub five by five.dnom;
+sub six by six.dnom;
+sub seven by seven.dnom;
+sub eight by eight.dnom;
+sub nine by nine.dnom;
+";
 name = dnom;
 },
 {
 automatic = 1;
-code = "lookup FRAC {\012	sub slash by fraction;\012} FRAC;\012lookup UP {\012	sub [zero one two three four five six seven eight nine] by [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];\012} UP;\012lookup DOWN {\012	sub fraction [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];\012	sub [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom] [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];\012} DOWN;\012";
+code = "lookup FRAC {
+	sub slash by fraction;
+} FRAC;
+lookup UP {
+	sub [zero one two three four five six seven eight nine] by [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
+} UP;
+lookup DOWN {
+	sub fraction [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+	sub [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom] [zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr]' by [zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+} DOWN;
+";
 name = frac;
 },
 {
 automatic = 1;
-code = "sub [zero one two three four five six seven eight nine] [A a]' by ordfeminine;\012sub [zero one two three four five six seven eight nine] [O o]' by ordmasculine;\012sub N o period by numero;\012";
+code = "sub [zero one two three four five six seven eight nine] [A a]' by ordfeminine;
+sub [zero one two three four five six seven eight nine] [O o]' by ordmasculine;
+sub N o period by numero;
+";
 name = ordn;
 },
 {
 automatic = 1;
-code = "sub zero by zero.tosf;\012sub one by one.tosf;\012sub two by two.tosf;\012sub three by three.tosf;\012sub four by four.tosf;\012sub five by five.tosf;\012sub six by six.tosf;\012sub seven by seven.tosf;\012sub eight by eight.tosf;\012sub nine by nine.tosf;\012";
+code = "sub zero by zero.tosf;
+sub one by one.tosf;
+sub two by two.tosf;
+sub three by three.tosf;
+sub four by four.tosf;
+sub five by five.tosf;
+sub six by six.tosf;
+sub seven by seven.tosf;
+sub eight by eight.tosf;
+sub nine by nine.tosf;
+";
 name = onum;
 },
 {
 automatic = 1;
-code = "sub dieresiscomb by dieresiscomb.case;\012sub dotaccentcomb by dotaccentcomb.case;\012sub gravecomb by gravecomb.case;\012sub acutecomb by acutecomb.case;\012sub hungarumlautcomb by hungarumlautcomb.case;\012sub circumflexcomb by circumflexcomb.case;\012sub caroncomb by caroncomb.case;\012sub brevecomb by brevecomb.case;\012sub ringcomb by ringcomb.case;\012sub tildecomb by tildecomb.case;\012sub macroncomb by macroncomb.case;\012sub hookabovecomb by hookabovecomb.case;\012sub dblgravecomb by dblgravecomb.case;\012sub breveinvertedcomb by breveinvertedcomb.case;\012sub commaturnedabovecomb by commaturnedabovecomb.case;\012sub ringhalfleft by ringhalfleft.case;\012sub ringhalfright by ringhalfright.case;\012sub brevecomb_acutecomb by brevecomb_acutecomb.case;\012sub brevecomb_gravecomb by brevecomb_gravecomb.case;\012sub brevecomb_hookabovecomb by brevecomb_hookabovecomb.case;\012sub brevecomb_tildecomb by brevecomb_tildecomb.case;\012sub circumflexcomb_acutecomb by circumflexcomb_acutecomb.case;\012sub circumflexcomb_gravecomb by circumflexcomb_gravecomb.case;\012sub circumflexcomb_hookabovecomb by circumflexcomb_hookabovecomb.case;\012sub circumflexcomb_tildecomb by circumflexcomb_tildecomb.case;\012";
+code = "sub dieresiscomb by dieresiscomb.case;
+sub dotaccentcomb by dotaccentcomb.case;
+sub gravecomb by gravecomb.case;
+sub acutecomb by acutecomb.case;
+sub hungarumlautcomb by hungarumlautcomb.case;
+sub circumflexcomb by circumflexcomb.case;
+sub caroncomb by caroncomb.case;
+sub brevecomb by brevecomb.case;
+sub ringcomb by ringcomb.case;
+sub tildecomb by tildecomb.case;
+sub macroncomb by macroncomb.case;
+sub hookabovecomb by hookabovecomb.case;
+sub dblgravecomb by dblgravecomb.case;
+sub breveinvertedcomb by breveinvertedcomb.case;
+sub commaturnedabovecomb by commaturnedabovecomb.case;
+sub ringhalfleft by ringhalfleft.case;
+sub ringhalfright by ringhalfright.case;
+sub brevecomb_acutecomb by brevecomb_acutecomb.case;
+sub brevecomb_gravecomb by brevecomb_gravecomb.case;
+sub brevecomb_hookabovecomb by brevecomb_hookabovecomb.case;
+sub brevecomb_tildecomb by brevecomb_tildecomb.case;
+sub circumflexcomb_acutecomb by circumflexcomb_acutecomb.case;
+sub circumflexcomb_gravecomb by circumflexcomb_gravecomb.case;
+sub circumflexcomb_hookabovecomb by circumflexcomb_hookabovecomb.case;
+sub circumflexcomb_tildecomb by circumflexcomb_tildecomb.case;
+";
 name = case;
 },
 {
 automatic = 1;
-code = "sub f i by fi;\012sub f l by fl;\012";
+code = "sub f i by fi;
+sub f l by fl;
+";
 name = liga;
 },
 {
 automatic = 1;
-code = "sub a by a.ss01;\012sub aacute by aacute.ss01;\012sub abreve by abreve.ss01;\012sub abreveacute by abreveacute.ss01;\012sub abrevedotbelow by abrevedotbelow.ss01;\012sub abrevegrave by abrevegrave.ss01;\012sub abrevehookabove by abrevehookabove.ss01;\012sub abrevetilde by abrevetilde.ss01;\012sub acaron by acaron.ss01;\012sub acircumflex by acircumflex.ss01;\012sub acircumflexacute by acircumflexacute.ss01;\012sub acircumflexdotbelow by acircumflexdotbelow.ss01;\012sub acircumflexgrave by acircumflexgrave.ss01;\012sub acircumflexhookabove by acircumflexhookabove.ss01;\012sub acircumflextilde by acircumflextilde.ss01;\012sub adblgrave by adblgrave.ss01;\012sub adieresis by adieresis.ss01;\012sub adotaccent by adotaccent.ss01;\012sub adotbelow by adotbelow.ss01;\012sub agrave by agrave.ss01;\012sub ahookabove by ahookabove.ss01;\012sub ainvertedbreve by ainvertedbreve.ss01;\012sub amacron by amacron.ss01;\012sub aogonek by aogonek.ss01;\012sub aring by aring.ss01;\012sub aringacute by aringacute.ss01;\012sub atilde by atilde.ss01;\012sub one by one.ss01;\012sub one.tosf by one.tosf.ss01;\012";
+code = "sub a by a.ss01;
+sub aacute by aacute.ss01;
+sub abreve by abreve.ss01;
+sub abreveacute by abreveacute.ss01;
+sub abrevedotbelow by abrevedotbelow.ss01;
+sub abrevegrave by abrevegrave.ss01;
+sub abrevehookabove by abrevehookabove.ss01;
+sub abrevetilde by abrevetilde.ss01;
+sub acaron by acaron.ss01;
+sub acircumflex by acircumflex.ss01;
+sub acircumflexacute by acircumflexacute.ss01;
+sub acircumflexdotbelow by acircumflexdotbelow.ss01;
+sub acircumflexgrave by acircumflexgrave.ss01;
+sub acircumflexhookabove by acircumflexhookabove.ss01;
+sub acircumflextilde by acircumflextilde.ss01;
+sub adblgrave by adblgrave.ss01;
+sub adieresis by adieresis.ss01;
+sub adotaccent by adotaccent.ss01;
+sub adotbelow by adotbelow.ss01;
+sub agrave by agrave.ss01;
+sub ahookabove by ahookabove.ss01;
+sub ainvertedbreve by ainvertedbreve.ss01;
+sub amacron by amacron.ss01;
+sub aogonek by aogonek.ss01;
+sub aring by aring.ss01;
+sub aringacute by aringacute.ss01;
+sub atilde by atilde.ss01;
+sub one by one.ss01;
+sub one.tosf by one.tosf.ss01;
+";
 name = salt;
 },
 {
 automatic = 1;
-code = "sub a by a.ss01;\012sub aacute by aacute.ss01;\012sub abreve by abreve.ss01;\012sub abreveacute by abreveacute.ss01;\012sub abrevedotbelow by abrevedotbelow.ss01;\012sub abrevegrave by abrevegrave.ss01;\012sub abrevehookabove by abrevehookabove.ss01;\012sub abrevetilde by abrevetilde.ss01;\012sub acaron by acaron.ss01;\012sub acircumflex by acircumflex.ss01;\012sub acircumflexacute by acircumflexacute.ss01;\012sub acircumflexdotbelow by acircumflexdotbelow.ss01;\012sub acircumflexgrave by acircumflexgrave.ss01;\012sub acircumflexhookabove by acircumflexhookabove.ss01;\012sub acircumflextilde by acircumflextilde.ss01;\012sub adblgrave by adblgrave.ss01;\012sub adieresis by adieresis.ss01;\012sub adotaccent by adotaccent.ss01;\012sub adotbelow by adotbelow.ss01;\012sub agrave by agrave.ss01;\012sub ahookabove by ahookabove.ss01;\012sub ainvertedbreve by ainvertedbreve.ss01;\012sub amacron by amacron.ss01;\012sub aogonek by aogonek.ss01;\012sub aring by aring.ss01;\012sub aringacute by aringacute.ss01;\012sub atilde by atilde.ss01;\012sub one by one.ss01;\012sub one.tosf by one.tosf.ss01;\012";
+code = "sub a by a.ss01;
+sub aacute by aacute.ss01;
+sub abreve by abreve.ss01;
+sub abreveacute by abreveacute.ss01;
+sub abrevedotbelow by abrevedotbelow.ss01;
+sub abrevegrave by abrevegrave.ss01;
+sub abrevehookabove by abrevehookabove.ss01;
+sub abrevetilde by abrevetilde.ss01;
+sub acaron by acaron.ss01;
+sub acircumflex by acircumflex.ss01;
+sub acircumflexacute by acircumflexacute.ss01;
+sub acircumflexdotbelow by acircumflexdotbelow.ss01;
+sub acircumflexgrave by acircumflexgrave.ss01;
+sub acircumflexhookabove by acircumflexhookabove.ss01;
+sub acircumflextilde by acircumflextilde.ss01;
+sub adblgrave by adblgrave.ss01;
+sub adieresis by adieresis.ss01;
+sub adotaccent by adotaccent.ss01;
+sub adotbelow by adotbelow.ss01;
+sub agrave by agrave.ss01;
+sub ahookabove by ahookabove.ss01;
+sub ainvertedbreve by ainvertedbreve.ss01;
+sub amacron by amacron.ss01;
+sub aogonek by aogonek.ss01;
+sub aring by aring.ss01;
+sub aringacute by aringacute.ss01;
+sub atilde by atilde.ss01;
+sub one by one.ss01;
+sub one.tosf by one.tosf.ss01;
+";
 name = ss01;
 }
 );
@@ -148,11 +388,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1089;
+value = 1088;
 },
 {
 name = winDescent;
-value = 279;
+value = 275;
 },
 {
 name = hheaAscender;
@@ -231,11 +471,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1089;
+value = 1088;
 },
 {
 name = winDescent;
-value = 279;
+value = 275;
 },
 {
 name = hheaAscender;
@@ -284,7 +524,6 @@ xHeight = 491;
 glyphs = (
 {
 glyphname = A;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -708,7 +947,6 @@ y = 1232;
 },
 {
 glyphname = Aacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -765,7 +1003,6 @@ unicode = 00C1;
 },
 {
 glyphname = Abreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -822,7 +1059,6 @@ unicode = 0102;
 },
 {
 glyphname = Abreveacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -879,7 +1115,6 @@ unicode = 1EAE;
 },
 {
 glyphname = Abrevedotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -952,7 +1187,6 @@ unicode = 1EB6;
 },
 {
 glyphname = Abrevegrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1009,7 +1243,6 @@ unicode = 1EB0;
 },
 {
 glyphname = Abrevehookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1066,7 +1299,6 @@ unicode = 1EB2;
 },
 {
 glyphname = Abrevetilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1123,7 +1355,6 @@ unicode = 1EB4;
 },
 {
 glyphname = Acircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1180,7 +1411,6 @@ unicode = 00C2;
 },
 {
 glyphname = Acircumflexacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1237,7 +1467,6 @@ unicode = 1EA4;
 },
 {
 glyphname = Acircumflexdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1310,7 +1539,6 @@ unicode = 1EAC;
 },
 {
 glyphname = Acircumflexgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1367,7 +1595,6 @@ unicode = 1EA6;
 },
 {
 glyphname = Acircumflexhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1424,7 +1651,6 @@ unicode = 1EA8;
 },
 {
 glyphname = Acircumflextilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1481,7 +1707,6 @@ unicode = 1EAA;
 },
 {
 glyphname = Adblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1538,7 +1763,6 @@ unicode = 0200;
 },
 {
 glyphname = Adieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1595,7 +1819,6 @@ unicode = 00C4;
 },
 {
 glyphname = Adotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1652,7 +1875,6 @@ unicode = 1EA0;
 },
 {
 glyphname = Agrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1709,7 +1931,6 @@ unicode = 00C0;
 },
 {
 glyphname = Ahookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1766,7 +1987,6 @@ unicode = 1EA2;
 },
 {
 glyphname = Ainvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1823,7 +2043,6 @@ unicode = 0202;
 },
 {
 glyphname = Amacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -1880,7 +2099,6 @@ unicode = 0100;
 },
 {
 glyphname = Aogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -2096,7 +2314,6 @@ unicode = 0104;
 },
 {
 glyphname = Aring;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -2333,7 +2550,6 @@ unicode = 00C5;
 },
 {
 glyphname = Aringacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -2609,7 +2825,6 @@ unicode = 01FA;
 },
 {
 glyphname = Atilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -2666,7 +2881,6 @@ unicode = 00C3;
 },
 {
 glyphname = AE;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -2958,7 +3172,6 @@ width = 1976;
 },
 {
 glyphname = AEacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -3015,7 +3228,6 @@ unicode = 01FC;
 },
 {
 glyphname = B;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -3576,7 +3788,6 @@ y = 1260;
 },
 {
 glyphname = C;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -3848,7 +4059,7 @@ lib = {
 name = C;
 unicodes = (
 );
-width = 1353.8900;
+width = 1353.89001;
 };
 };
 components = (
@@ -3865,7 +4076,6 @@ width = 1354;
 },
 {
 glyphname = Cacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -3922,7 +4132,6 @@ unicode = 0106;
 },
 {
 glyphname = Ccaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -3979,7 +4188,6 @@ unicode = 010C;
 },
 {
 glyphname = Ccedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -4068,7 +4276,6 @@ width = 1422;
 },
 {
 glyphname = Ccedillaacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -4141,7 +4348,6 @@ unicode = 1E08;
 },
 {
 glyphname = Ccircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -4198,7 +4404,6 @@ unicode = 0108;
 },
 {
 glyphname = Cdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -4255,7 +4460,6 @@ unicode = 010A;
 },
 {
 glyphname = D;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -4694,7 +4898,6 @@ width = 1535;
 },
 {
 glyphname = DZcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -4751,7 +4954,6 @@ unicode = 01C4;
 },
 {
 glyphname = Eth;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -4992,7 +5194,6 @@ unicode = 00D0;
 },
 {
 glyphname = Dcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5049,7 +5250,6 @@ unicode = 010E;
 },
 {
 glyphname = Dcroat;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5090,7 +5290,6 @@ unicode = 0110;
 },
 {
 glyphname = Ddotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5147,7 +5346,6 @@ unicode = 1E0C;
 },
 {
 glyphname = Dlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5204,7 +5402,6 @@ unicode = 1E0E;
 },
 {
 glyphname = Dzcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5261,7 +5458,6 @@ unicode = 01C5;
 },
 {
 glyphname = E;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -5558,7 +5754,6 @@ width = 1258;
 },
 {
 glyphname = Eacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5647,7 +5842,6 @@ width = 1263;
 },
 {
 glyphname = Ebreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5704,7 +5898,6 @@ unicode = 0114;
 },
 {
 glyphname = Ecaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5779,7 +5972,6 @@ width = 1234;
 },
 {
 glyphname = Ecedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5836,7 +6028,6 @@ unicode = 0228;
 },
 {
 glyphname = Ecedillabreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5909,7 +6100,6 @@ unicode = 1E1C;
 },
 {
 glyphname = Ecircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -5998,7 +6188,6 @@ width = 1263;
 },
 {
 glyphname = Ecircumflexacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6055,7 +6244,6 @@ unicode = 1EBE;
 },
 {
 glyphname = Ecircumflexdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6128,7 +6316,6 @@ unicode = 1EC6;
 },
 {
 glyphname = Ecircumflexgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6185,7 +6372,6 @@ unicode = 1EC0;
 },
 {
 glyphname = Ecircumflexhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6242,7 +6428,6 @@ unicode = 1EC2;
 },
 {
 glyphname = Ecircumflextilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6299,7 +6484,6 @@ unicode = 1EC4;
 },
 {
 glyphname = Edblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6388,7 +6572,6 @@ width = 1263;
 },
 {
 glyphname = Edieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6477,7 +6660,6 @@ width = 1263;
 },
 {
 glyphname = Edotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6552,7 +6734,6 @@ width = 1234;
 },
 {
 glyphname = Edotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6609,7 +6790,6 @@ unicode = 1EB8;
 },
 {
 glyphname = Egrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6698,7 +6878,6 @@ width = 1263;
 },
 {
 glyphname = Ehookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6755,7 +6934,6 @@ unicode = 1EBA;
 },
 {
 glyphname = Einvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6844,7 +7022,6 @@ width = 1263;
 },
 {
 glyphname = Emacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6919,7 +7096,6 @@ width = 1234;
 },
 {
 glyphname = Emacronacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -6992,7 +7168,6 @@ unicode = 1E16;
 },
 {
 glyphname = Emacrongrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -7065,7 +7240,6 @@ unicode = 1E14;
 },
 {
 glyphname = Eogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -7376,7 +7550,6 @@ width = 1234;
 },
 {
 glyphname = Etilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -7433,7 +7606,6 @@ unicode = 1EBC;
 },
 {
 glyphname = F;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -7852,7 +8024,6 @@ width = 1175;
 },
 {
 glyphname = G;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -8337,7 +8508,6 @@ width = 1538;
 },
 {
 glyphname = Gbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -8394,7 +8564,6 @@ unicode = 011E;
 },
 {
 glyphname = Gcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -8451,7 +8620,6 @@ unicode = 01E6;
 },
 {
 glyphname = Gcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -8508,7 +8676,6 @@ unicode = 011C;
 },
 {
 glyphname = Gcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -8565,7 +8732,6 @@ unicode = 0122;
 },
 {
 glyphname = Gdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -8622,7 +8788,6 @@ unicode = 0120;
 },
 {
 glyphname = Gmacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -8679,7 +8844,6 @@ unicode = 1E20;
 },
 {
 glyphname = H;
-lastChange = "2017-02-16 11:33:42 +0000";
 layers = (
 {
 anchors = (
@@ -9000,7 +9164,6 @@ width = 1524;
 },
 {
 glyphname = Hbar;
-lastChange = "2017-02-16 11:34:05 +0000";
 layers = (
 {
 background = {
@@ -9311,7 +9474,6 @@ width = 1464;
 },
 {
 glyphname = Hbrevebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9368,7 +9530,6 @@ unicode = 1E2A;
 },
 {
 glyphname = Hcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9425,7 +9586,6 @@ unicode = 0124;
 },
 {
 glyphname = Hdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9482,7 +9642,6 @@ unicode = 1E24;
 },
 {
 glyphname = I;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -9691,7 +9850,6 @@ width = 637;
 },
 {
 glyphname = Iacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9748,7 +9906,6 @@ unicode = 00CD;
 },
 {
 glyphname = Ibreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9805,7 +9962,6 @@ unicode = 012C;
 },
 {
 glyphname = Icircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9862,7 +10018,6 @@ unicode = 00CE;
 },
 {
 glyphname = Idblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9919,7 +10074,6 @@ unicode = 0208;
 },
 {
 glyphname = Idieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -9976,7 +10130,6 @@ unicode = 00CF;
 },
 {
 glyphname = Idieresisacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10049,7 +10202,6 @@ unicode = 1E2E;
 },
 {
 glyphname = Idotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10106,7 +10258,6 @@ unicode = 0130;
 },
 {
 glyphname = Idotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10163,7 +10314,6 @@ unicode = 1ECA;
 },
 {
 glyphname = Igrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10220,7 +10370,6 @@ unicode = 00CC;
 },
 {
 glyphname = Ihookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10277,7 +10426,6 @@ unicode = 1EC8;
 },
 {
 glyphname = Iinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10334,7 +10482,6 @@ unicode = 020A;
 },
 {
 glyphname = Imacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10391,7 +10538,6 @@ unicode = 012A;
 },
 {
 glyphname = Iogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10584,7 +10730,6 @@ unicode = 012E;
 },
 {
 glyphname = Itilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10641,7 +10786,6 @@ unicode = 0128;
 },
 {
 glyphname = J;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -10850,7 +10994,6 @@ width = 1126;
 },
 {
 glyphname = Jcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -10907,7 +11050,6 @@ unicode = 0134;
 },
 {
 glyphname = K;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -11148,7 +11290,6 @@ width = 1329;
 },
 {
 glyphname = Kcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -11205,7 +11346,6 @@ unicode = 0136;
 },
 {
 glyphname = L;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -11620,7 +11760,6 @@ width = 1169;
 },
 {
 glyphname = LJ;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -11853,7 +11992,6 @@ unicode = 01C7;
 },
 {
 glyphname = Lacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -11910,7 +12048,6 @@ unicode = 0139;
 },
 {
 glyphname = Lcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -11967,7 +12104,6 @@ unicode = 013D;
 },
 {
 glyphname = Lcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12024,7 +12160,6 @@ unicode = 013B;
 },
 {
 glyphname = Ldot;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12081,7 +12216,6 @@ unicode = 013F;
 },
 {
 glyphname = Ldotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12138,7 +12272,6 @@ unicode = 1E36;
 },
 {
 glyphname = Lj;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12195,7 +12328,6 @@ unicode = 01C8;
 },
 {
 glyphname = Llinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12252,7 +12384,6 @@ unicode = 1E3A;
 },
 {
 glyphname = Lslash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12463,7 +12594,6 @@ unicode = 0141;
 },
 {
 glyphname = M;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -12748,7 +12878,6 @@ width = 1984;
 },
 {
 glyphname = Mdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -12805,7 +12934,6 @@ unicode = 1E42;
 },
 {
 glyphname = N;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -13054,7 +13182,6 @@ width = 1557;
 },
 {
 glyphname = NJ;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13111,7 +13238,6 @@ unicode = 01CA;
 },
 {
 glyphname = Nacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13168,7 +13294,6 @@ unicode = 0143;
 },
 {
 glyphname = Ncaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13225,7 +13350,6 @@ unicode = 0147;
 },
 {
 glyphname = Ncommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13282,7 +13406,6 @@ unicode = 0145;
 },
 {
 glyphname = Ndotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13339,7 +13462,6 @@ unicode = 1E44;
 },
 {
 glyphname = Ndotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13396,7 +13518,6 @@ unicode = 1E46;
 },
 {
 glyphname = Eng;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13611,7 +13732,6 @@ width = 1495;
 },
 {
 glyphname = Nj;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13668,7 +13788,6 @@ unicode = 01CB;
 },
 {
 glyphname = Nlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13725,7 +13844,6 @@ unicode = 1E48;
 },
 {
 glyphname = Ntilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -13782,7 +13900,6 @@ unicode = 00D1;
 },
 {
 glyphname = O;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -14085,7 +14202,6 @@ width = 1604;
 },
 {
 glyphname = Oacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14142,7 +14258,6 @@ unicode = 00D3;
 },
 {
 glyphname = Obreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14199,7 +14314,6 @@ unicode = 014E;
 },
 {
 glyphname = Ocircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14256,7 +14370,6 @@ unicode = 00D4;
 },
 {
 glyphname = Ocircumflexacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14313,7 +14426,6 @@ unicode = 1ED0;
 },
 {
 glyphname = Ocircumflexdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14386,7 +14498,6 @@ unicode = 1ED8;
 },
 {
 glyphname = Ocircumflexgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14443,7 +14554,6 @@ unicode = 1ED2;
 },
 {
 glyphname = Ocircumflexhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14500,7 +14610,6 @@ unicode = 1ED4;
 },
 {
 glyphname = Ocircumflextilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14557,7 +14666,6 @@ unicode = 1ED6;
 },
 {
 glyphname = Odblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14614,7 +14722,6 @@ unicode = 020C;
 },
 {
 glyphname = Odieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14671,7 +14778,6 @@ unicode = 00D6;
 },
 {
 glyphname = Odieresismacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14744,7 +14850,6 @@ unicode = 022A;
 },
 {
 glyphname = Odotaccentmacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14817,7 +14922,6 @@ unicode = 0230;
 },
 {
 glyphname = Odotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14874,7 +14978,6 @@ unicode = 1ECC;
 },
 {
 glyphname = Ograve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14931,7 +15034,6 @@ unicode = 00D2;
 },
 {
 glyphname = Ohookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -14988,7 +15090,6 @@ unicode = 1ECE;
 },
 {
 glyphname = Ohorn;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -15277,7 +15378,6 @@ unicode = 01A0;
 },
 {
 glyphname = Ohornacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15334,7 +15434,6 @@ unicode = 1EDA;
 },
 {
 glyphname = Ohorndotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15391,7 +15490,6 @@ unicode = 1EE2;
 },
 {
 glyphname = Ohorngrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15448,7 +15546,6 @@ unicode = 1EDC;
 },
 {
 glyphname = Ohornhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15505,7 +15602,6 @@ unicode = 1EDE;
 },
 {
 glyphname = Ohorntilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15562,7 +15658,6 @@ unicode = 1EE0;
 },
 {
 glyphname = Ohungarumlaut;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15619,7 +15714,6 @@ unicode = 0150;
 },
 {
 glyphname = Oinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15676,7 +15770,6 @@ unicode = 020E;
 },
 {
 glyphname = Omacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15733,7 +15826,6 @@ unicode = 014C;
 },
 {
 glyphname = Omacronacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15806,7 +15898,6 @@ unicode = 1E52;
 },
 {
 glyphname = Omacrongrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -15879,7 +15970,6 @@ unicode = 1E50;
 },
 {
 glyphname = Oogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -16100,7 +16190,6 @@ unicode = 01EA;
 },
 {
 glyphname = Oslash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -16375,7 +16464,6 @@ width = 1597;
 },
 {
 glyphname = Oslashacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -16432,7 +16520,6 @@ unicode = 01FE;
 },
 {
 glyphname = Otilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -16489,7 +16576,6 @@ unicode = 00D5;
 },
 {
 glyphname = Otildeacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -16562,7 +16648,6 @@ unicode = 1E4C;
 },
 {
 glyphname = Otildedieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -16635,7 +16720,6 @@ unicode = 1E4E;
 },
 {
 glyphname = Otildemacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -16708,7 +16792,6 @@ unicode = 022C;
 },
 {
 glyphname = OE;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -16958,7 +17041,6 @@ unicode = 0152;
 },
 {
 glyphname = P;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -17397,7 +17479,6 @@ width = 1319;
 },
 {
 glyphname = Thorn;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -17624,7 +17705,6 @@ unicode = 00DE;
 },
 {
 glyphname = Q;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -17865,7 +17945,6 @@ width = 1604;
 },
 {
 glyphname = R;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -18320,7 +18399,6 @@ width = 1408;
 },
 {
 glyphname = Racute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18377,7 +18455,6 @@ unicode = 0154;
 },
 {
 glyphname = Rcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18434,7 +18511,6 @@ unicode = 0158;
 },
 {
 glyphname = Rcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18491,7 +18567,6 @@ unicode = 0156;
 },
 {
 glyphname = Rdblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18548,7 +18623,6 @@ unicode = 0210;
 },
 {
 glyphname = Rdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18605,7 +18679,6 @@ unicode = 1E5A;
 },
 {
 glyphname = Rinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18662,7 +18735,6 @@ unicode = 0212;
 },
 {
 glyphname = Rlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -18719,7 +18791,6 @@ unicode = 1E5E;
 },
 {
 glyphname = S;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -19093,7 +19164,6 @@ width = 1317;
 },
 {
 glyphname = Sacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19150,7 +19220,6 @@ unicode = 015A;
 },
 {
 glyphname = Sacutedotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19234,7 +19303,6 @@ unicode = 1E64;
 },
 {
 glyphname = Scaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19291,7 +19359,6 @@ unicode = 0160;
 },
 {
 glyphname = Scarondotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19364,7 +19431,6 @@ unicode = 1E66;
 },
 {
 glyphname = Scedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19421,7 +19487,6 @@ unicode = 015E;
 },
 {
 glyphname = Scircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19478,7 +19543,6 @@ unicode = 015C;
 },
 {
 glyphname = Scommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19535,7 +19599,6 @@ unicode = 0218;
 },
 {
 glyphname = Sdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19592,7 +19655,6 @@ unicode = 1E60;
 },
 {
 glyphname = Sdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19649,7 +19711,6 @@ unicode = 1E62;
 },
 {
 glyphname = Sdotbelowdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -19722,7 +19783,6 @@ unicode = 1E68;
 },
 {
 glyphname = Germandbls;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -20004,7 +20064,6 @@ unicode = 1E9E;
 },
 {
 glyphname = Schwa;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -20253,7 +20312,6 @@ unicode = 018F;
 },
 {
 glyphname = T;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -20668,7 +20726,6 @@ width = 1199;
 },
 {
 glyphname = Tbar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -20903,7 +20960,6 @@ width = 1158;
 },
 {
 glyphname = Tcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -20960,7 +21016,6 @@ unicode = 0164;
 },
 {
 glyphname = Tcedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21019,7 +21074,6 @@ unicode = 0162;
 },
 {
 glyphname = Tcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21076,7 +21130,6 @@ unicode = 021A;
 },
 {
 glyphname = Tdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21133,7 +21186,6 @@ unicode = 1E6C;
 },
 {
 glyphname = Tlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21190,7 +21242,6 @@ unicode = 1E6E;
 },
 {
 glyphname = U;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -21455,7 +21506,6 @@ width = 1513;
 },
 {
 glyphname = Uacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21512,7 +21562,6 @@ unicode = 00DA;
 },
 {
 glyphname = Ubreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21569,7 +21618,6 @@ unicode = 016C;
 },
 {
 glyphname = Ucircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21626,7 +21674,6 @@ unicode = 00DB;
 },
 {
 glyphname = Udblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21683,7 +21730,6 @@ unicode = 0214;
 },
 {
 glyphname = Udieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21740,7 +21786,6 @@ unicode = 00DC;
 },
 {
 glyphname = Udotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21797,7 +21842,6 @@ unicode = 1EE4;
 },
 {
 glyphname = Ugrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21854,7 +21898,6 @@ unicode = 00D9;
 },
 {
 glyphname = Uhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -21911,7 +21954,6 @@ unicode = 1EE6;
 },
 {
 glyphname = Uhorn;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -22159,7 +22201,6 @@ unicode = 01AF;
 },
 {
 glyphname = Uhornacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22216,7 +22257,6 @@ unicode = 1EE8;
 },
 {
 glyphname = Uhorndotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22273,7 +22313,6 @@ unicode = 1EF0;
 },
 {
 glyphname = Uhorngrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22330,7 +22369,6 @@ unicode = 1EEA;
 },
 {
 glyphname = Uhornhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22387,7 +22425,6 @@ unicode = 1EEC;
 },
 {
 glyphname = Uhorntilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22444,7 +22481,6 @@ unicode = 1EEE;
 },
 {
 glyphname = Uhungarumlaut;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22501,7 +22537,6 @@ unicode = 0170;
 },
 {
 glyphname = Uinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22558,7 +22593,6 @@ unicode = 0216;
 },
 {
 glyphname = Umacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22615,7 +22649,6 @@ unicode = 016A;
 },
 {
 glyphname = Umacrondieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22688,7 +22721,6 @@ unicode = 1E7A;
 },
 {
 glyphname = Uogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -22974,7 +23006,6 @@ unicode = 0172;
 },
 {
 glyphname = Uring;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23031,7 +23062,6 @@ unicode = 016E;
 },
 {
 glyphname = Utilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23088,7 +23118,6 @@ unicode = 0168;
 },
 {
 glyphname = Utildeacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23161,7 +23190,6 @@ unicode = 1E78;
 },
 {
 glyphname = V;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -23502,7 +23530,6 @@ width = 1365;
 },
 {
 glyphname = W;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -23727,7 +23754,6 @@ width = 2070;
 },
 {
 glyphname = Wacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23784,7 +23810,6 @@ unicode = 1E82;
 },
 {
 glyphname = Wcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23841,7 +23866,6 @@ unicode = 0174;
 },
 {
 glyphname = Wdieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23898,7 +23922,6 @@ unicode = 1E84;
 },
 {
 glyphname = Wgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -23955,7 +23978,6 @@ unicode = 1E80;
 },
 {
 glyphname = X;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -24440,7 +24462,6 @@ width = 1322;
 },
 {
 glyphname = Y;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -24793,7 +24814,6 @@ width = 1321;
 },
 {
 glyphname = Yacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -24850,7 +24870,6 @@ unicode = 00DD;
 },
 {
 glyphname = Ycircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -24907,7 +24926,6 @@ unicode = 0176;
 },
 {
 glyphname = Ydieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -24964,7 +24982,6 @@ unicode = 0178;
 },
 {
 glyphname = Ydotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25021,7 +25038,6 @@ unicode = 1E8E;
 },
 {
 glyphname = Ydotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25078,7 +25094,6 @@ unicode = 1EF4;
 },
 {
 glyphname = Ygrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25135,7 +25150,6 @@ unicode = 1EF2;
 },
 {
 glyphname = Yhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25192,7 +25206,6 @@ unicode = 1EF6;
 },
 {
 glyphname = Ymacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25249,7 +25262,6 @@ unicode = 0232;
 },
 {
 glyphname = Ytilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25306,7 +25318,6 @@ unicode = 1EF8;
 },
 {
 glyphname = Z;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -25717,7 +25728,6 @@ width = 1222;
 },
 {
 glyphname = Zacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25774,7 +25784,6 @@ unicode = 0179;
 },
 {
 glyphname = Zcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25831,7 +25840,6 @@ unicode = 017D;
 },
 {
 glyphname = Zdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25888,7 +25896,6 @@ unicode = 017B;
 },
 {
 glyphname = Zdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -25945,7 +25952,6 @@ unicode = 1E92;
 },
 {
 glyphname = Iacute_J.loclNLD;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -26033,7 +26039,6 @@ rightKerningGroup = J;
 },
 {
 glyphname = a;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -26378,7 +26383,6 @@ width = 1101;
 },
 {
 glyphname = aacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26467,7 +26471,6 @@ width = 1080;
 },
 {
 glyphname = abreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26542,7 +26545,6 @@ width = 1040;
 },
 {
 glyphname = abreveacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26599,7 +26601,6 @@ unicode = 1EAF;
 },
 {
 glyphname = abrevedotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26672,7 +26673,6 @@ unicode = 1EB7;
 },
 {
 glyphname = abrevegrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26729,7 +26729,6 @@ unicode = 1EB1;
 },
 {
 glyphname = abrevehookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26786,7 +26785,6 @@ unicode = 1EB3;
 },
 {
 glyphname = abrevetilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26843,7 +26841,6 @@ unicode = 1EB5;
 },
 {
 glyphname = acaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26900,7 +26897,6 @@ unicode = 01CE;
 },
 {
 glyphname = acircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -26989,7 +26985,6 @@ width = 1080;
 },
 {
 glyphname = acircumflexacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27046,7 +27041,6 @@ unicode = 1EA5;
 },
 {
 glyphname = acircumflexdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27119,7 +27113,6 @@ unicode = 1EAD;
 },
 {
 glyphname = acircumflexgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27176,7 +27169,6 @@ unicode = 1EA7;
 },
 {
 glyphname = acircumflexhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27233,7 +27225,6 @@ unicode = 1EA9;
 },
 {
 glyphname = acircumflextilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27290,7 +27281,6 @@ unicode = 1EAB;
 },
 {
 glyphname = adblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27379,7 +27369,6 @@ width = 1080;
 },
 {
 glyphname = adieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27468,7 +27457,6 @@ width = 1080;
 },
 {
 glyphname = adotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27525,7 +27513,6 @@ unicode = 0227;
 },
 {
 glyphname = adotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27582,7 +27569,6 @@ unicode = 1EA1;
 },
 {
 glyphname = agrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27671,7 +27657,6 @@ width = 1080;
 },
 {
 glyphname = ahookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27728,7 +27713,6 @@ unicode = 1EA3;
 },
 {
 glyphname = ainvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27817,7 +27801,6 @@ width = 1080;
 },
 {
 glyphname = amacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -27892,7 +27875,6 @@ width = 1040;
 },
 {
 glyphname = aogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -28290,7 +28272,6 @@ width = 1040;
 },
 {
 glyphname = aring;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -28379,7 +28360,6 @@ width = 1080;
 },
 {
 glyphname = aringacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -28824,7 +28804,6 @@ unicode = 01FB;
 },
 {
 glyphname = atilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -28913,7 +28892,6 @@ width = 1080;
 },
 {
 glyphname = ae;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -29413,7 +29391,6 @@ width = 1734;
 },
 {
 glyphname = aeacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -29470,7 +29447,6 @@ unicode = 01FD;
 },
 {
 glyphname = b;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -29993,7 +29969,6 @@ width = 1203;
 },
 {
 glyphname = c;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -30241,7 +30216,7 @@ lib = {
 name = c;
 unicodes = (
 );
-width = 956.1410;
+width = 956.14099;
 };
 };
 components = (
@@ -30258,7 +30233,6 @@ width = 992;
 },
 {
 glyphname = cacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -30315,7 +30289,6 @@ unicode = 0107;
 },
 {
 glyphname = ccaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -30372,7 +30345,6 @@ unicode = 010D;
 },
 {
 glyphname = ccedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -30429,7 +30401,6 @@ unicode = 00E7;
 },
 {
 glyphname = ccedillaacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -30502,7 +30473,6 @@ unicode = 1E09;
 },
 {
 glyphname = ccircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -30559,7 +30529,6 @@ unicode = 0109;
 },
 {
 glyphname = cdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -30616,7 +30585,6 @@ unicode = 010B;
 },
 {
 glyphname = d;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -30953,7 +30921,6 @@ width = 1207;
 },
 {
 glyphname = eth;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -31248,7 +31215,6 @@ width = 1230;
 },
 {
 glyphname = dcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -31349,7 +31315,6 @@ unicode = 010F;
 },
 {
 glyphname = dcroat;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -31676,7 +31641,6 @@ width = 1181;
 },
 {
 glyphname = ddotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -31733,7 +31697,6 @@ unicode = 1E0D;
 },
 {
 glyphname = dlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -31790,7 +31753,6 @@ unicode = 1E0F;
 },
 {
 glyphname = dzcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -31847,7 +31809,6 @@ unicode = 01C6;
 },
 {
 glyphname = e;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -32144,7 +32105,6 @@ width = 1132;
 },
 {
 glyphname = eacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32201,7 +32161,6 @@ unicode = 00E9;
 },
 {
 glyphname = ebreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32258,7 +32217,6 @@ unicode = 0115;
 },
 {
 glyphname = ecaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32315,7 +32273,6 @@ unicode = 011B;
 },
 {
 glyphname = ecedillabreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32388,7 +32345,6 @@ unicode = 1E1D;
 },
 {
 glyphname = ecircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32445,7 +32401,6 @@ unicode = 00EA;
 },
 {
 glyphname = ecircumflexacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32502,7 +32457,6 @@ unicode = 1EBF;
 },
 {
 glyphname = ecircumflexdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32575,7 +32529,6 @@ unicode = 1EC7;
 },
 {
 glyphname = ecircumflexgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32632,7 +32585,6 @@ unicode = 1EC1;
 },
 {
 glyphname = ecircumflexhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32689,7 +32641,6 @@ unicode = 1EC3;
 },
 {
 glyphname = ecircumflextilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32746,7 +32697,6 @@ unicode = 1EC5;
 },
 {
 glyphname = edblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32803,7 +32753,6 @@ unicode = 0205;
 },
 {
 glyphname = edieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32860,7 +32809,6 @@ unicode = 00EB;
 },
 {
 glyphname = edotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32917,7 +32865,6 @@ unicode = 0117;
 },
 {
 glyphname = edotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -32974,7 +32921,6 @@ unicode = 1EB9;
 },
 {
 glyphname = egrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33031,7 +32977,6 @@ unicode = 00E8;
 },
 {
 glyphname = ehookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33088,7 +33033,6 @@ unicode = 1EBB;
 },
 {
 glyphname = einvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33145,7 +33089,6 @@ unicode = 0207;
 },
 {
 glyphname = emacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33202,7 +33145,6 @@ unicode = 0113;
 },
 {
 glyphname = emacronacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33275,7 +33217,6 @@ unicode = 1E17;
 },
 {
 glyphname = emacrongrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33348,7 +33289,6 @@ unicode = 1E15;
 },
 {
 glyphname = eogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -33705,7 +33645,6 @@ unicode = 0119;
 },
 {
 glyphname = etilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33762,7 +33701,6 @@ unicode = 1EBD;
 },
 {
 glyphname = schwa;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -33959,7 +33897,6 @@ unicode = 0259;
 },
 {
 glyphname = f;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -34244,7 +34181,6 @@ width = 723;
 },
 {
 glyphname = g;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -34597,7 +34533,6 @@ width = 1207;
 },
 {
 glyphname = gbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -34654,7 +34589,6 @@ unicode = 011F;
 },
 {
 glyphname = gcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -34711,7 +34645,6 @@ unicode = 01E7;
 },
 {
 glyphname = gcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -34768,7 +34701,6 @@ unicode = 011D;
 },
 {
 glyphname = gcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -34825,7 +34757,6 @@ unicode = 0123;
 },
 {
 glyphname = gdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -34882,7 +34813,6 @@ unicode = 0121;
 },
 {
 glyphname = gmacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -34939,7 +34869,6 @@ unicode = 1E21;
 },
 {
 glyphname = h;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -35225,7 +35154,6 @@ y = 113;
 },
 {
 glyphname = hbar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -35494,7 +35422,6 @@ unicode = 0127;
 },
 {
 glyphname = hbrevebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -35551,7 +35478,6 @@ unicode = 1E2B;
 },
 {
 glyphname = hcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -35608,7 +35534,6 @@ unicode = 0125;
 },
 {
 glyphname = hdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -35665,7 +35590,6 @@ unicode = 1E25;
 },
 {
 glyphname = i;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -35746,7 +35670,6 @@ unicode = 0069;
 },
 {
 glyphname = idotless;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -35907,7 +35830,6 @@ unicode = 0131;
 },
 {
 glyphname = iacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -35964,7 +35886,6 @@ unicode = 00ED;
 },
 {
 glyphname = ibreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36021,7 +35942,6 @@ unicode = 012D;
 },
 {
 glyphname = icircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36078,7 +35998,6 @@ unicode = 00EE;
 },
 {
 glyphname = idblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36135,7 +36054,6 @@ unicode = 0209;
 },
 {
 glyphname = idieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36192,7 +36110,6 @@ unicode = 00EF;
 },
 {
 glyphname = idieresisacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36265,7 +36182,6 @@ unicode = 1E2F;
 },
 {
 glyphname = idotaccent;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -36321,7 +36237,6 @@ rightKerningGroup = l;
 },
 {
 glyphname = idotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36378,7 +36293,6 @@ unicode = 1ECB;
 },
 {
 glyphname = igrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36435,7 +36349,6 @@ unicode = 00EC;
 },
 {
 glyphname = ihookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36492,7 +36405,6 @@ unicode = 1EC9;
 },
 {
 glyphname = iinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36549,7 +36461,6 @@ unicode = 020B;
 },
 {
 glyphname = imacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36606,7 +36517,6 @@ unicode = 012B;
 },
 {
 glyphname = iogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36867,7 +36777,6 @@ unicode = 012F;
 },
 {
 glyphname = itilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36924,7 +36833,6 @@ unicode = 0129;
 },
 {
 glyphname = j;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -36981,7 +36889,6 @@ unicode = 006A;
 },
 {
 glyphname = jdotless;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -37158,7 +37065,6 @@ unicode = 0237;
 },
 {
 glyphname = jcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -37215,7 +37121,6 @@ unicode = 0135;
 },
 {
 glyphname = k;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -37577,7 +37482,6 @@ width = 984;
 },
 {
 glyphname = kcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -37634,7 +37538,6 @@ unicode = 0137;
 },
 {
 glyphname = kgreenlandic;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -37861,7 +37764,6 @@ width = 1047;
 },
 {
 glyphname = l;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -38056,7 +37958,6 @@ width = 511;
 },
 {
 glyphname = lacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38113,7 +38014,6 @@ unicode = 013A;
 },
 {
 glyphname = lcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38214,7 +38114,6 @@ unicode = 013E;
 },
 {
 glyphname = lcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38271,7 +38170,6 @@ unicode = 013C;
 },
 {
 glyphname = ldot;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38332,7 +38230,6 @@ unicode = 0140;
 },
 {
 glyphname = ldotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38389,7 +38286,6 @@ unicode = 1E37;
 },
 {
 glyphname = lj;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38446,7 +38342,6 @@ unicode = 01C9;
 },
 {
 glyphname = llinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38503,7 +38398,6 @@ unicode = 1E3B;
 },
 {
 glyphname = lslash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -38660,7 +38554,6 @@ unicode = 0142;
 },
 {
 glyphname = m;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -39050,7 +38943,6 @@ width = 1877;
 },
 {
 glyphname = mdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39107,7 +38999,6 @@ unicode = 1E43;
 },
 {
 glyphname = n;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -39403,7 +39294,6 @@ y = 113;
 },
 {
 glyphname = nacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39460,7 +39350,6 @@ unicode = 0144;
 },
 {
 glyphname = napostrophe;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39513,7 +39402,6 @@ unicode = 0149;
 },
 {
 glyphname = ncaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39570,7 +39458,6 @@ unicode = 0148;
 },
 {
 glyphname = ncommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39627,7 +39514,6 @@ unicode = 0146;
 },
 {
 glyphname = ndotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39684,7 +39570,6 @@ unicode = 1E45;
 },
 {
 glyphname = ndotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -39741,7 +39626,6 @@ unicode = 1E47;
 },
 {
 glyphname = eng;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40007,7 +39891,6 @@ unicode = 014B;
 },
 {
 glyphname = nj;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40064,7 +39947,6 @@ unicode = 01CC;
 },
 {
 glyphname = nlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40121,7 +40003,6 @@ unicode = 1E49;
 },
 {
 glyphname = ntilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40178,7 +40059,6 @@ unicode = 00F1;
 },
 {
 glyphname = o;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -40471,7 +40351,6 @@ width = 1199;
 },
 {
 glyphname = oacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40528,7 +40407,6 @@ unicode = 00F3;
 },
 {
 glyphname = obreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40585,7 +40463,6 @@ unicode = 014F;
 },
 {
 glyphname = ocircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40642,7 +40519,6 @@ unicode = 00F4;
 },
 {
 glyphname = ocircumflexacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40699,7 +40575,6 @@ unicode = 1ED1;
 },
 {
 glyphname = ocircumflexdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40772,7 +40647,6 @@ unicode = 1ED9;
 },
 {
 glyphname = ocircumflexgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40829,7 +40703,6 @@ unicode = 1ED3;
 },
 {
 glyphname = ocircumflexhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40886,7 +40759,6 @@ unicode = 1ED5;
 },
 {
 glyphname = ocircumflextilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -40943,7 +40815,6 @@ unicode = 1ED7;
 },
 {
 glyphname = odblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41000,7 +40871,6 @@ unicode = 020D;
 },
 {
 glyphname = odieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41057,7 +40927,6 @@ unicode = 00F6;
 },
 {
 glyphname = odieresismacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41130,7 +40999,6 @@ unicode = 022B;
 },
 {
 glyphname = odotaccentmacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41203,7 +41071,6 @@ unicode = 0231;
 },
 {
 glyphname = odotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41260,7 +41127,6 @@ unicode = 1ECD;
 },
 {
 glyphname = ograve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41317,7 +41183,6 @@ unicode = 00F2;
 },
 {
 glyphname = ohookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41374,7 +41239,6 @@ unicode = 1ECF;
 },
 {
 glyphname = ohorn;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -41711,7 +41575,6 @@ unicode = 01A1;
 },
 {
 glyphname = ohornacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41768,7 +41631,6 @@ unicode = 1EDB;
 },
 {
 glyphname = ohorndotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41825,7 +41687,6 @@ unicode = 1EE3;
 },
 {
 glyphname = ohorngrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41882,7 +41743,6 @@ unicode = 1EDD;
 },
 {
 glyphname = ohornhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41939,7 +41799,6 @@ unicode = 1EDF;
 },
 {
 glyphname = ohorntilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -41996,7 +41855,6 @@ unicode = 1EE1;
 },
 {
 glyphname = ohungarumlaut;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -42053,7 +41911,6 @@ unicode = 0151;
 },
 {
 glyphname = oinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -42110,7 +41967,6 @@ unicode = 020F;
 },
 {
 glyphname = omacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -42167,7 +42023,6 @@ unicode = 014D;
 },
 {
 glyphname = omacronacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -42240,7 +42095,6 @@ unicode = 1E53;
 },
 {
 glyphname = omacrongrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -42313,7 +42167,6 @@ unicode = 1E51;
 },
 {
 glyphname = oogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -42658,7 +42511,6 @@ unicode = 01EB;
 },
 {
 glyphname = oslash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -42899,7 +42751,6 @@ unicode = 00F8;
 },
 {
 glyphname = oslashacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -42956,7 +42807,6 @@ unicode = 01FF;
 },
 {
 glyphname = otilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -43013,7 +42863,6 @@ unicode = 00F5;
 },
 {
 glyphname = otildeacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -43086,7 +42935,6 @@ unicode = 1E4D;
 },
 {
 glyphname = otildedieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -43159,7 +43007,6 @@ unicode = 1E4F;
 },
 {
 glyphname = otildemacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -43232,7 +43079,6 @@ unicode = 022D;
 },
 {
 glyphname = oe;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -43629,7 +43475,6 @@ unicode = 0153;
 },
 {
 glyphname = p;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -43985,7 +43830,6 @@ width = 1207;
 },
 {
 glyphname = thorn;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -44360,7 +44204,6 @@ unicode = 00FE;
 },
 {
 glyphname = q;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -44665,7 +44508,6 @@ width = 1207;
 },
 {
 glyphname = r;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -44906,7 +44748,6 @@ width = 763;
 },
 {
 glyphname = racute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -44963,7 +44804,6 @@ unicode = 0155;
 },
 {
 glyphname = rcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45020,7 +44860,6 @@ unicode = 0159;
 },
 {
 glyphname = rcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45077,7 +44916,6 @@ unicode = 0157;
 },
 {
 glyphname = rdblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45134,7 +44972,6 @@ unicode = 0211;
 },
 {
 glyphname = rdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45191,7 +45028,6 @@ unicode = 1E5B;
 },
 {
 glyphname = rinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45248,7 +45084,6 @@ unicode = 0213;
 },
 {
 glyphname = rlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45305,7 +45140,6 @@ unicode = 1E5F;
 },
 {
 glyphname = s;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -45613,12 +45447,11 @@ lib = {
 name = s;
 unicodes = (
 );
-width = 1006.7600;
+width = 1006.76001;
 };
 },
 {
 glyphname = sacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45675,7 +45508,6 @@ unicode = 015B;
 },
 {
 glyphname = sacutedotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45754,7 +45586,6 @@ unicode = 1E65;
 },
 {
 glyphname = scaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45811,7 +45642,6 @@ unicode = 0161;
 },
 {
 glyphname = scarondotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45884,7 +45714,6 @@ unicode = 1E67;
 },
 {
 glyphname = scedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45941,7 +45770,6 @@ unicode = 015F;
 },
 {
 glyphname = scircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -45998,7 +45826,6 @@ unicode = 015D;
 },
 {
 glyphname = scommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -46055,7 +45882,6 @@ unicode = 0219;
 },
 {
 glyphname = sdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -46112,7 +45938,6 @@ unicode = 1E61;
 },
 {
 glyphname = sdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -46169,7 +45994,6 @@ unicode = 1E63;
 },
 {
 glyphname = sdotbelowdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -46242,7 +46066,6 @@ unicode = 1E69;
 },
 {
 glyphname = germandbls;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -46491,7 +46314,6 @@ unicode = 00DF;
 },
 {
 glyphname = t;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -47016,7 +46838,6 @@ width = 768;
 },
 {
 glyphname = tbar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47323,7 +47144,6 @@ width = 706;
 },
 {
 glyphname = tcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47380,7 +47200,6 @@ unicode = 0165;
 },
 {
 glyphname = tcedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47437,7 +47256,6 @@ unicode = 0163;
 },
 {
 glyphname = tcommaaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47494,7 +47312,6 @@ unicode = 021B;
 },
 {
 glyphname = tdieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47551,7 +47368,6 @@ unicode = 1E97;
 },
 {
 glyphname = tdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47608,7 +47424,6 @@ unicode = 1E6D;
 },
 {
 glyphname = tlinebelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -47665,7 +47480,6 @@ unicode = 1E6F;
 },
 {
 glyphname = u;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -48197,7 +48011,6 @@ width = 1195;
 },
 {
 glyphname = uacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48254,7 +48067,6 @@ unicode = 00FA;
 },
 {
 glyphname = ubreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48311,7 +48123,6 @@ unicode = 016D;
 },
 {
 glyphname = ucircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48368,7 +48179,6 @@ unicode = 00FB;
 },
 {
 glyphname = udblgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48425,7 +48235,6 @@ unicode = 0215;
 },
 {
 glyphname = udieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48482,7 +48291,6 @@ unicode = 00FC;
 },
 {
 glyphname = udotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48539,7 +48347,6 @@ unicode = 1EE5;
 },
 {
 glyphname = ugrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48596,7 +48403,6 @@ unicode = 00F9;
 },
 {
 glyphname = uhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -48653,7 +48459,6 @@ unicode = 1EE7;
 },
 {
 glyphname = uhorn;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -48967,7 +48772,6 @@ unicode = 01B0;
 },
 {
 glyphname = uhornacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49024,7 +48828,6 @@ unicode = 1EE9;
 },
 {
 glyphname = uhorndotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49081,7 +48884,6 @@ unicode = 1EF1;
 },
 {
 glyphname = uhorngrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49138,7 +48940,6 @@ unicode = 1EEB;
 },
 {
 glyphname = uhornhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49195,7 +48996,6 @@ unicode = 1EED;
 },
 {
 glyphname = uhorntilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49252,7 +49052,6 @@ unicode = 1EEF;
 },
 {
 glyphname = uhungarumlaut;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49309,7 +49108,6 @@ unicode = 0171;
 },
 {
 glyphname = uinvertedbreve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49366,7 +49164,6 @@ unicode = 0217;
 },
 {
 glyphname = umacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49423,7 +49220,6 @@ unicode = 016B;
 },
 {
 glyphname = umacrondieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49496,7 +49292,6 @@ unicode = 1E7B;
 },
 {
 glyphname = uogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49818,7 +49613,6 @@ unicode = 0173;
 },
 {
 glyphname = uring;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49875,7 +49669,6 @@ unicode = 016F;
 },
 {
 glyphname = utilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -49932,7 +49725,6 @@ unicode = 0169;
 },
 {
 glyphname = utildeacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -50005,7 +49797,6 @@ unicode = 1E79;
 },
 {
 glyphname = v;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -50308,7 +50099,6 @@ width = 1027;
 },
 {
 glyphname = w;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -50793,7 +50583,6 @@ width = 1742;
 },
 {
 glyphname = wacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -50850,7 +50639,6 @@ unicode = 1E83;
 },
 {
 glyphname = wcircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -50907,7 +50695,6 @@ unicode = 0175;
 },
 {
 glyphname = wdieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -50964,7 +50751,6 @@ unicode = 1E85;
 },
 {
 glyphname = wgrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51021,7 +50807,6 @@ unicode = 1E81;
 },
 {
 glyphname = x;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -51244,7 +51029,6 @@ width = 1039;
 },
 {
 glyphname = y;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -51623,7 +51407,6 @@ width = 1029;
 },
 {
 glyphname = yacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51680,7 +51463,6 @@ unicode = 00FD;
 },
 {
 glyphname = ycircumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51737,7 +51519,6 @@ unicode = 0177;
 },
 {
 glyphname = ydieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51794,7 +51575,6 @@ unicode = 00FF;
 },
 {
 glyphname = ydotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51851,7 +51631,6 @@ unicode = 1E8F;
 },
 {
 glyphname = ydotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51908,7 +51687,6 @@ unicode = 1EF5;
 },
 {
 glyphname = ygrave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -51965,7 +51743,6 @@ unicode = 1EF3;
 },
 {
 glyphname = yhookabove;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52022,7 +51799,6 @@ unicode = 1EF7;
 },
 {
 glyphname = ymacron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52079,7 +51855,6 @@ unicode = 0233;
 },
 {
 glyphname = ytilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52136,7 +51911,6 @@ unicode = 1EF9;
 },
 {
 glyphname = z;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -52335,7 +52109,6 @@ unicode = 007A;
 },
 {
 glyphname = zacute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52392,7 +52165,6 @@ unicode = 017A;
 },
 {
 glyphname = zcaron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52449,7 +52221,6 @@ unicode = 017E;
 },
 {
 glyphname = zdotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52506,7 +52277,6 @@ unicode = 017C;
 },
 {
 glyphname = zdotbelow;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -52563,7 +52333,6 @@ unicode = 1E93;
 },
 {
 glyphname = iacute_j.loclNLD;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -52651,7 +52420,6 @@ rightKerningGroup = jdotless;
 },
 {
 glyphname = a.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -53022,7 +52790,6 @@ width = 1207;
 },
 {
 glyphname = aacute.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53110,7 +52877,6 @@ width = 1080;
 },
 {
 glyphname = abreve.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53184,7 +52950,6 @@ width = 1040;
 },
 {
 glyphname = abreveacute.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53240,7 +53005,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = abrevedotbelow.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53312,7 +53076,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = abrevegrave.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53368,7 +53131,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = abrevehookabove.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53424,7 +53186,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = abrevetilde.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53480,7 +53241,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = acaron.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53536,7 +53296,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = acircumflex.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53624,7 +53383,6 @@ width = 1080;
 },
 {
 glyphname = acircumflexacute.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53680,7 +53438,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = acircumflexdotbelow.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53752,7 +53509,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = acircumflexgrave.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53808,7 +53564,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = acircumflexhookabove.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53864,7 +53619,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = acircumflextilde.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -53920,7 +53674,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = adblgrave.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54008,7 +53761,6 @@ width = 1080;
 },
 {
 glyphname = adieresis.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54096,7 +53848,6 @@ width = 1080;
 },
 {
 glyphname = adotaccent.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54152,7 +53903,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = adotbelow.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54208,7 +53958,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = agrave.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54296,7 +54045,6 @@ width = 1080;
 },
 {
 glyphname = ahookabove.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54352,7 +54100,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = ainvertedbreve.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54440,7 +54187,6 @@ width = 1080;
 },
 {
 glyphname = amacron.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54514,7 +54260,6 @@ width = 1040;
 },
 {
 glyphname = aogonek.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -54954,7 +54699,6 @@ width = 1040;
 },
 {
 glyphname = aring.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -55042,7 +54786,6 @@ width = 1080;
 },
 {
 glyphname = aringacute.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -55462,7 +55205,6 @@ rightKerningGroup = u;
 },
 {
 glyphname = atilde.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -55550,7 +55292,6 @@ width = 1080;
 },
 {
 glyphname = fi;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -55851,7 +55592,6 @@ unicode = FB01;
 },
 {
 glyphname = fl;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -55908,7 +55648,6 @@ unicode = FB02;
 },
 {
 glyphname = I_J.loclNLD;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -55964,7 +55703,6 @@ rightKerningGroup = J;
 },
 {
 glyphname = i_j.loclNLD;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -56020,7 +55758,6 @@ rightKerningGroup = l;
 },
 {
 glyphname = ordfeminine;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -56277,7 +56014,6 @@ unicode = 00AA;
 },
 {
 glyphname = ordmasculine;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -56444,7 +56180,6 @@ unicode = 00BA;
 color = 9;
 export = 0;
 glyphname = ordfeminine.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -56641,7 +56376,6 @@ rightKerningGroup = ord;
 color = 9;
 export = 0;
 glyphname = ordmasculine.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -56767,7 +56501,6 @@ rightKerningGroup = ord;
 },
 {
 glyphname = Delta;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -56944,7 +56677,6 @@ unicode = 0394;
 },
 {
 glyphname = Sigma;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -57121,7 +56853,6 @@ unicode = 03A3;
 },
 {
 glyphname = Omega;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -57362,7 +57093,6 @@ unicode = 03A9;
 },
 {
 glyphname = mu;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -57628,7 +57358,6 @@ unicode = 03BC;
 },
 {
 glyphname = pi;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -57899,7 +57628,6 @@ width = 1285;
 },
 {
 glyphname = zero;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -58064,7 +57792,6 @@ unicode = 0030;
 },
 {
 glyphname = one;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -58255,7 +57982,6 @@ width = 1160;
 },
 {
 glyphname = two;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -58510,7 +58236,6 @@ width = 1160;
 },
 {
 glyphname = three;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -58863,7 +58588,6 @@ width = 1160;
 },
 {
 glyphname = four;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -59034,7 +58758,6 @@ width = 1160;
 },
 {
 glyphname = five;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -59366,7 +59089,6 @@ width = 1160;
 },
 {
 glyphname = six;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -59724,7 +59446,6 @@ width = 1160;
 },
 {
 glyphname = seven;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -59859,7 +59580,6 @@ width = 1160;
 },
 {
 glyphname = eight;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -60166,7 +59886,6 @@ width = 1160;
 },
 {
 glyphname = nine;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -60441,7 +60160,6 @@ width = 1160;
 },
 {
 glyphname = one.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -60575,7 +60293,6 @@ width = 1160;
 },
 {
 glyphname = one.tosf.ss01;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -60700,7 +60417,6 @@ width = 1160;
 },
 {
 glyphname = zero.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -60864,7 +60580,6 @@ rightKerningGroup = zero;
 },
 {
 glyphname = one.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -61026,7 +60741,6 @@ width = 1160;
 },
 {
 glyphname = two.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -61236,7 +60950,6 @@ width = 1160;
 },
 {
 glyphname = three.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -61582,7 +61295,6 @@ width = 1160;
 },
 {
 glyphname = four.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -61724,7 +61436,6 @@ width = 1160;
 },
 {
 glyphname = five.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -62010,7 +61721,6 @@ width = 1160;
 },
 {
 glyphname = six.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -62321,7 +62031,6 @@ width = 1160;
 },
 {
 glyphname = seven.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -62437,7 +62146,6 @@ width = 1160;
 },
 {
 glyphname = eight.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -62777,7 +62485,6 @@ width = 1160;
 },
 {
 glyphname = nine.tosf;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -63088,7 +62795,6 @@ width = 1160;
 },
 {
 glyphname = zeroinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63129,7 +62835,6 @@ unicode = 2080;
 },
 {
 glyphname = oneinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63170,7 +62875,6 @@ unicode = 2081;
 },
 {
 glyphname = twoinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63211,7 +62915,6 @@ unicode = 2082;
 },
 {
 glyphname = threeinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63252,7 +62955,6 @@ unicode = 2083;
 },
 {
 glyphname = fourinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63293,7 +62995,6 @@ unicode = 2084;
 },
 {
 glyphname = fiveinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63334,7 +63035,6 @@ unicode = 2085;
 },
 {
 glyphname = sixinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63375,7 +63075,6 @@ unicode = 2086;
 },
 {
 glyphname = seveninferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63416,7 +63115,6 @@ unicode = 2087;
 },
 {
 glyphname = eightinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63457,7 +63155,6 @@ unicode = 2088;
 },
 {
 glyphname = nineinferior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -63498,7 +63195,6 @@ unicode = 2089;
 },
 {
 glyphname = zero.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -63662,7 +63358,6 @@ rightKerningGroup = zero.dnom;
 },
 {
 glyphname = one.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -63834,7 +63529,6 @@ rightKerningGroup = one.dnom;
 },
 {
 glyphname = two.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -64046,7 +63740,6 @@ rightKerningGroup = two.dnom;
 },
 {
 glyphname = three.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -64334,7 +64027,6 @@ rightKerningGroup = three.dnom;
 },
 {
 glyphname = four.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -64486,7 +64178,6 @@ rightKerningGroup = four.dnom;
 },
 {
 glyphname = five.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -64734,7 +64425,6 @@ rightKerningGroup = five.dnom;
 },
 {
 glyphname = six.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -64990,7 +64680,6 @@ rightKerningGroup = six.dnom;
 },
 {
 glyphname = seven.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65106,7 +64795,6 @@ rightKerningGroup = seven.dnom;
 },
 {
 glyphname = eight.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65394,7 +65082,6 @@ rightKerningGroup = eight.dnom;
 },
 {
 glyphname = nine.dnom;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65650,7 +65337,6 @@ rightKerningGroup = nine.dnom;
 },
 {
 glyphname = zero.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65698,7 +65384,6 @@ rightKerningGroup = zero.dnom;
 },
 {
 glyphname = one.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65746,7 +65431,6 @@ rightKerningGroup = one.dnom;
 },
 {
 glyphname = two.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65794,7 +65478,6 @@ rightKerningGroup = two.dnom;
 },
 {
 glyphname = three.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65842,7 +65525,6 @@ rightKerningGroup = three.dnom;
 },
 {
 glyphname = four.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65890,7 +65572,6 @@ rightKerningGroup = four.dnom;
 },
 {
 glyphname = five.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65938,7 +65619,6 @@ rightKerningGroup = five.dnom;
 },
 {
 glyphname = six.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -65986,7 +65666,6 @@ rightKerningGroup = six.dnom;
 },
 {
 glyphname = seven.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -66034,7 +65713,6 @@ rightKerningGroup = seven.dnom;
 },
 {
 glyphname = eight.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -66082,7 +65760,6 @@ rightKerningGroup = eight.dnom;
 },
 {
 glyphname = nine.numr;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -66130,7 +65807,6 @@ rightKerningGroup = nine.dnom;
 },
 {
 glyphname = zerosuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66179,7 +65855,6 @@ unicode = 2070;
 },
 {
 glyphname = onesuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66228,7 +65903,6 @@ unicode = 00B9;
 },
 {
 glyphname = twosuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66277,7 +65951,6 @@ unicode = 00B2;
 },
 {
 glyphname = threesuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66326,7 +65999,6 @@ unicode = 00B3;
 },
 {
 glyphname = foursuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66375,7 +66047,6 @@ unicode = 2074;
 },
 {
 glyphname = fivesuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66424,7 +66095,6 @@ unicode = 2075;
 },
 {
 glyphname = sixsuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66473,7 +66143,6 @@ unicode = 2076;
 },
 {
 glyphname = sevensuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66522,7 +66191,6 @@ unicode = 2077;
 },
 {
 glyphname = eightsuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66571,7 +66239,6 @@ unicode = 2078;
 },
 {
 glyphname = ninesuperior;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66620,7 +66287,6 @@ unicode = 2079;
 },
 {
 glyphname = fraction;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66717,7 +66383,6 @@ unicode = 2044;
 },
 {
 glyphname = onehalf;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66790,7 +66455,6 @@ unicode = 00BD;
 },
 {
 glyphname = onequarter;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66881,7 +66545,6 @@ width = 1543;
 },
 {
 glyphname = threequarters;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -66974,7 +66637,6 @@ width = 1603;
 color = 9;
 export = 0;
 glyphname = zeroinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67072,7 +66734,6 @@ rightKerningGroup = zero.dnom;
 color = 9;
 export = 0;
 glyphname = oneinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67174,7 +66835,6 @@ rightKerningGroup = one.dnom;
 color = 9;
 export = 0;
 glyphname = twoinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67296,7 +66956,6 @@ rightKerningGroup = two.dnom;
 color = 9;
 export = 0;
 glyphname = threeinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67456,7 +67115,6 @@ rightKerningGroup = three.dnom;
 color = 9;
 export = 0;
 glyphname = fourinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67548,7 +67206,6 @@ rightKerningGroup = four.dnom;
 color = 9;
 export = 0;
 glyphname = fiveinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67688,7 +67345,6 @@ rightKerningGroup = five.dnom;
 color = 9;
 export = 0;
 glyphname = sixinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67832,7 +67488,6 @@ rightKerningGroup = six.dnom;
 color = 9;
 export = 0;
 glyphname = seveninferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -67906,7 +67561,6 @@ rightKerningGroup = seven.dnom;
 color = 9;
 export = 0;
 glyphname = eightinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68066,7 +67720,6 @@ rightKerningGroup = eight.dnom;
 color = 9;
 export = 0;
 glyphname = nineinferior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68210,7 +67863,6 @@ rightKerningGroup = nine.dnom;
 color = 9;
 export = 0;
 glyphname = zero.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68338,7 +67990,6 @@ rightKerningGroup = zero.dnom;
 color = 9;
 export = 0;
 glyphname = one.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68472,7 +68123,6 @@ rightKerningGroup = one.dnom;
 color = 9;
 export = 0;
 glyphname = two.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68636,7 +68286,6 @@ rightKerningGroup = two.dnom;
 color = 9;
 export = 0;
 glyphname = three.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68857,7 +68506,6 @@ rightKerningGroup = three.dnom;
 color = 9;
 export = 0;
 glyphname = four.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -68976,7 +68624,6 @@ rightKerningGroup = four.dnom;
 color = 9;
 export = 0;
 glyphname = five.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -69167,7 +68814,6 @@ rightKerningGroup = five.dnom;
 color = 9;
 export = 0;
 glyphname = six.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -69364,7 +69010,6 @@ rightKerningGroup = six.dnom;
 color = 9;
 export = 0;
 glyphname = seven.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -69456,7 +69101,6 @@ rightKerningGroup = seven.dnom;
 color = 9;
 export = 0;
 glyphname = eight.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -69677,7 +69321,6 @@ rightKerningGroup = eight.dnom;
 color = 9;
 export = 0;
 glyphname = nine.dnom.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -69874,7 +69517,6 @@ rightKerningGroup = nine.dnom;
 color = 9;
 export = 0;
 glyphname = zero.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -69973,7 +69615,6 @@ rightKerningGroup = zero.dnom;
 color = 9;
 export = 0;
 glyphname = one.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70076,7 +69717,6 @@ rightKerningGroup = one.dnom;
 color = 9;
 export = 0;
 glyphname = two.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70199,7 +69839,6 @@ rightKerningGroup = two.dnom;
 color = 9;
 export = 0;
 glyphname = three.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70360,7 +69999,6 @@ rightKerningGroup = three.dnom;
 color = 9;
 export = 0;
 glyphname = four.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70453,7 +70091,6 @@ rightKerningGroup = four.dnom;
 color = 9;
 export = 0;
 glyphname = five.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70594,7 +70231,6 @@ rightKerningGroup = five.dnom;
 color = 9;
 export = 0;
 glyphname = six.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70739,7 +70375,6 @@ rightKerningGroup = six.dnom;
 color = 9;
 export = 0;
 glyphname = seven.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70814,7 +70449,6 @@ rightKerningGroup = seven.dnom;
 color = 9;
 export = 0;
 glyphname = eight.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -70975,7 +70609,6 @@ rightKerningGroup = eight.dnom;
 color = 9;
 export = 0;
 glyphname = nine.numr.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71120,7 +70753,6 @@ rightKerningGroup = nine.dnom;
 color = 9;
 export = 0;
 glyphname = zerosuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71219,7 +70851,6 @@ rightKerningGroup = zero.dnom;
 color = 9;
 export = 0;
 glyphname = onesuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71322,7 +70953,6 @@ rightKerningGroup = one.dnom;
 color = 9;
 export = 0;
 glyphname = twosuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71445,7 +71075,6 @@ rightKerningGroup = two.dnom;
 color = 9;
 export = 0;
 glyphname = threesuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71606,7 +71235,6 @@ rightKerningGroup = three.dnom;
 color = 9;
 export = 0;
 glyphname = foursuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71699,7 +71327,6 @@ rightKerningGroup = four.dnom;
 color = 9;
 export = 0;
 glyphname = fivesuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71840,7 +71467,6 @@ rightKerningGroup = five.dnom;
 color = 9;
 export = 0;
 glyphname = sixsuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -71985,7 +71611,6 @@ rightKerningGroup = six.dnom;
 color = 9;
 export = 0;
 glyphname = sevensuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -72060,7 +71685,6 @@ rightKerningGroup = seven.dnom;
 color = 9;
 export = 0;
 glyphname = eightsuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -72221,7 +71845,6 @@ rightKerningGroup = eight.dnom;
 color = 9;
 export = 0;
 glyphname = ninesuperior.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -72366,7 +71989,6 @@ rightKerningGroup = nine.dnom;
 color = 9;
 export = 0;
 glyphname = fraction.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -72439,7 +72061,6 @@ rightKerningGroup = fraction;
 color = 9;
 export = 0;
 glyphname = onehalf.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -72667,7 +72288,6 @@ rightKerningGroup = one.dnom;
 color = 9;
 export = 0;
 glyphname = onequarter.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -72883,7 +72503,6 @@ width = 1543;
 color = 9;
 export = 0;
 glyphname = threequarters.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -73155,7 +72774,6 @@ width = 1603;
 },
 {
 glyphname = asterisk;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -73364,7 +72982,6 @@ unicode = 002A;
 },
 {
 glyphname = backslash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -73445,7 +73062,6 @@ unicode = 005C;
 },
 {
 glyphname = periodcentered;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -73542,7 +73158,6 @@ unicode = 00B7;
 },
 {
 glyphname = bullet;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -73639,7 +73254,6 @@ unicode = 2022;
 },
 {
 glyphname = colon;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -73804,7 +73418,6 @@ unicode = 003A;
 },
 {
 glyphname = comma;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -73933,7 +73546,6 @@ unicode = 002C;
 },
 {
 glyphname = ellipsis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -74166,7 +73778,6 @@ unicode = 2026;
 },
 {
 glyphname = exclam;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -74339,7 +73950,6 @@ unicode = 0021;
 },
 {
 glyphname = exclamdown;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -74530,7 +74140,6 @@ width = 785;
 },
 {
 glyphname = numbersign;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -74863,7 +74472,6 @@ unicode = 0023;
 },
 {
 glyphname = period;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -74960,7 +74568,6 @@ unicode = 002E;
 },
 {
 glyphname = question;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -75209,7 +74816,6 @@ unicode = 003F;
 },
 {
 glyphname = questiondown;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -75476,7 +75082,6 @@ width = 1047;
 },
 {
 glyphname = quotedbl;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -75533,7 +75138,6 @@ unicode = 0022;
 },
 {
 glyphname = quotesingle;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -75638,7 +75242,6 @@ unicode = 0027;
 },
 {
 glyphname = semicolon;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -75835,7 +75438,6 @@ unicode = 003B;
 },
 {
 glyphname = slash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -75916,7 +75518,6 @@ unicode = 002F;
 },
 {
 glyphname = underscore;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -76021,7 +75622,6 @@ unicode = 005F;
 },
 {
 glyphname = periodcentered.loclCAT;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -76141,7 +75741,6 @@ rightKerningGroup = period;
 },
 {
 glyphname = braceleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -76394,7 +75993,6 @@ unicode = 007B;
 },
 {
 glyphname = braceright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -76647,7 +76245,6 @@ unicode = 007D;
 },
 {
 glyphname = bracketleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -76816,7 +76413,6 @@ unicode = 005B;
 },
 {
 glyphname = bracketright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -76985,7 +76581,6 @@ unicode = 005D;
 },
 {
 glyphname = parenleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77106,7 +76701,6 @@ unicode = 0028;
 },
 {
 glyphname = parenright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77227,7 +76821,6 @@ unicode = 0029;
 },
 {
 glyphname = emdash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77332,7 +76925,6 @@ unicode = 2014;
 },
 {
 glyphname = endash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77437,7 +77029,6 @@ unicode = 2013;
 },
 {
 glyphname = figuredash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77542,7 +77133,6 @@ unicode = 2012;
 },
 {
 glyphname = horizontalbar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77647,7 +77237,6 @@ unicode = 2015;
 },
 {
 glyphname = hyphen;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77752,7 +77341,6 @@ unicode = 002D;
 },
 {
 glyphname = hyphentwo;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77797,7 +77385,6 @@ unicode = 2010;
 },
 {
 glyphname = softhyphen;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77842,7 +77429,6 @@ unicode = 00AD;
 },
 {
 glyphname = guillemetleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77899,7 +77485,6 @@ unicode = 00AB;
 },
 {
 glyphname = guillemetright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -77956,7 +77541,6 @@ unicode = 00BB;
 },
 {
 glyphname = guilsinglleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78057,7 +77641,6 @@ unicode = 2039;
 },
 {
 glyphname = guilsinglright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78158,7 +77741,6 @@ unicode = 203A;
 },
 {
 glyphname = quotedblbase;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78247,7 +77829,6 @@ width = 1161;
 },
 {
 glyphname = quotedblleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78336,7 +77917,6 @@ width = 1161;
 },
 {
 glyphname = quotedblright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78425,7 +78005,6 @@ width = 1161;
 },
 {
 glyphname = quoteleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78586,7 +78165,6 @@ width = 615;
 },
 {
 glyphname = quoteright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78747,7 +78325,6 @@ width = 615;
 },
 {
 glyphname = quotesinglbase;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -78893,7 +78470,6 @@ width = 615;
 },
 {
 glyphname = figurespace;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -78910,7 +78486,6 @@ unicode = 2007;
 },
 {
 glyphname = hairspace;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -78927,7 +78502,6 @@ unicode = 200A;
 },
 {
 glyphname = punctuationspace;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -78944,7 +78518,6 @@ unicode = 2008;
 },
 {
 glyphname = space;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -78993,7 +78566,6 @@ width = 528;
 },
 {
 glyphname = nbspace;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -79010,7 +78582,6 @@ unicode = 00A0;
 },
 {
 glyphname = thinspace;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -79027,7 +78598,6 @@ unicode = 2009;
 },
 {
 glyphname = zerowidthspace;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -79044,7 +78614,6 @@ unicode = 200B;
 },
 {
 glyphname = CR;
-lastChange = "2016-09-27 11:04:35 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -79059,7 +78628,6 @@ unicode = 000D;
 },
 {
 glyphname = cedi;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -79386,7 +78954,6 @@ unicode = 20B5;
 },
 {
 glyphname = cent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -79707,7 +79274,6 @@ width = 1046;
 },
 {
 glyphname = colonsign;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -80110,7 +79676,6 @@ unicode = 20A1;
 },
 {
 glyphname = currency;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -80497,7 +80062,6 @@ unicode = 00A4;
 },
 {
 glyphname = dollar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -80866,7 +80430,6 @@ width = 1274;
 },
 {
 glyphname = dong;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -81300,7 +80863,6 @@ unicode = 20AB;
 },
 {
 glyphname = euro;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -81667,7 +81229,6 @@ unicode = 20AC;
 },
 {
 glyphname = florin;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -81886,7 +81447,6 @@ unicode = 0192;
 },
 {
 glyphname = franc;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -82157,7 +81717,6 @@ unicode = 20A3;
 },
 {
 glyphname = guarani;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -82516,7 +82075,6 @@ unicode = 20B2;
 },
 {
 glyphname = kip;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -82759,7 +82317,6 @@ unicode = 20AD;
 },
 {
 glyphname = lira;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -83130,7 +82687,6 @@ unicode = 20A4;
 },
 {
 glyphname = liraTurkish;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -83397,7 +82953,6 @@ unicode = 20BA;
 },
 {
 glyphname = manat;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -83632,7 +83187,6 @@ unicode = 20BC;
 },
 {
 glyphname = naira;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -84031,7 +83585,6 @@ unicode = 20A6;
 },
 {
 glyphname = peseta;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -84606,7 +84159,6 @@ unicode = 20A7;
 },
 {
 glyphname = peso;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -85009,7 +84561,6 @@ unicode = 20B1;
 },
 {
 glyphname = ruble;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -85320,7 +84871,6 @@ unicode = 20BD;
 },
 {
 glyphname = rupeeIndian;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -85659,7 +85209,6 @@ unicode = 20B9;
 },
 {
 glyphname = sterling;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -85972,7 +85521,6 @@ width = 1361;
 },
 {
 glyphname = won;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -86347,7 +85895,6 @@ unicode = 20A9;
 },
 {
 glyphname = yen;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -86632,7 +86179,6 @@ unicode = 00A5;
 color = 9;
 export = 0;
 glyphname = manat.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -86810,7 +86356,6 @@ width = 600;
 },
 {
 glyphname = bulletoperator;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -86907,7 +86452,6 @@ unicode = 2219;
 },
 {
 glyphname = divisionslash;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -86988,7 +86532,6 @@ unicode = 2215;
 },
 {
 glyphname = plus;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87169,7 +86712,6 @@ unicode = 002B;
 },
 {
 glyphname = minus;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87274,7 +86816,6 @@ unicode = 2212;
 },
 {
 glyphname = multiply;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87455,7 +86996,6 @@ unicode = 00D7;
 },
 {
 glyphname = divide;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87644,7 +87184,6 @@ unicode = 00F7;
 },
 {
 glyphname = equal;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87705,7 +87244,6 @@ unicode = 003D;
 },
 {
 glyphname = notequal;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87850,7 +87388,6 @@ unicode = 2260;
 },
 {
 glyphname = greater;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -87991,7 +87528,6 @@ unicode = 003E;
 },
 {
 glyphname = less;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -88132,7 +87668,6 @@ unicode = 003C;
 },
 {
 glyphname = greaterequal;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -88297,7 +87832,6 @@ unicode = 2265;
 },
 {
 glyphname = lessequal;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -88462,7 +87996,6 @@ unicode = 2264;
 },
 {
 glyphname = plusminus;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -88667,7 +88200,6 @@ unicode = 00B1;
 },
 {
 glyphname = approxequal;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -88728,7 +88260,6 @@ unicode = 2248;
 },
 {
 glyphname = asciitilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -88897,7 +88428,6 @@ unicode = 007E;
 },
 {
 glyphname = logicalnot;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -89022,7 +88552,6 @@ unicode = 00AC;
 },
 {
 glyphname = emptyset;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -89351,7 +88880,6 @@ unicode = 2205;
 },
 {
 glyphname = infinity;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -89660,7 +89188,6 @@ unicode = 221E;
 },
 {
 glyphname = integral;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -89845,7 +89372,6 @@ unicode = 222B;
 },
 {
 glyphname = Ohm;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -90086,7 +89612,6 @@ unicode = 2126;
 },
 {
 glyphname = increment;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -90327,7 +89852,6 @@ unicode = 2206;
 },
 {
 glyphname = product;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -90472,7 +89996,6 @@ unicode = 220F;
 },
 {
 glyphname = summation;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -90649,7 +90172,6 @@ unicode = 2211;
 },
 {
 glyphname = radical;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -90806,7 +90328,6 @@ unicode = 221A;
 },
 {
 glyphname = micro;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -91031,7 +90552,6 @@ unicode = 00B5;
 },
 {
 glyphname = partialdiff;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -91264,7 +90784,6 @@ unicode = 2202;
 },
 {
 glyphname = percent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -91617,7 +91136,6 @@ unicode = 0025;
 },
 {
 glyphname = perthousand;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -91802,7 +91320,6 @@ unicode = 2030;
 },
 {
 glyphname = lozenge;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -91975,7 +91492,6 @@ unicode = 25CA;
 },
 {
 glyphname = apple;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -92128,7 +91644,6 @@ unicode = F8FF;
 },
 {
 glyphname = at;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -92489,7 +92004,6 @@ unicode = 0040;
 },
 {
 glyphname = ampersand;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -92738,7 +92252,6 @@ unicode = 0026;
 },
 {
 glyphname = paragraph;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -92895,7 +92408,6 @@ unicode = 00B6;
 },
 {
 glyphname = section;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -93276,7 +92788,6 @@ unicode = 00A7;
 },
 {
 glyphname = copyright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -93629,7 +93140,6 @@ unicode = 00A9;
 },
 {
 glyphname = registered;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -94004,7 +93514,6 @@ unicode = 00AE;
 },
 {
 glyphname = trademark;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -94329,7 +93838,6 @@ unicode = 2122;
 },
 {
 glyphname = degree;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -94494,7 +94002,6 @@ unicode = 00B0;
 },
 {
 glyphname = bar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -94599,7 +94106,6 @@ unicode = 007C;
 },
 {
 glyphname = brokenbar;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -94780,7 +94286,6 @@ unicode = 00A6;
 },
 {
 glyphname = literSign;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -95069,7 +94574,6 @@ unicode = 2113;
 },
 {
 glyphname = dagger;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -95246,7 +94750,6 @@ unicode = 2020;
 },
 {
 glyphname = daggerdbl;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -95495,7 +94998,6 @@ unicode = 2021;
 },
 {
 glyphname = estimated;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -95756,7 +95258,6 @@ unicode = 212E;
 },
 {
 glyphname = numero;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -96145,7 +95646,6 @@ unicode = 2116;
 },
 {
 glyphname = asciicircum;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -96262,7 +95762,6 @@ unicode = 005E;
 },
 {
 glyphname = minute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -96367,7 +95866,6 @@ unicode = 2032;
 },
 {
 glyphname = second;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -96426,7 +95924,6 @@ unicode = 2033;
 color = 9;
 export = 0;
 glyphname = copyright.bold;
-lastChange = "2016-09-26 13:41:49 +0000";
 layers = (
 {
 background = {
@@ -96695,7 +96192,6 @@ rightKerningGroup = O;
 color = 9;
 export = 0;
 glyphname = registered.bold;
-lastChange = "2016-09-26 13:41:49 +0000";
 layers = (
 {
 background = {
@@ -96976,7 +96472,6 @@ rightKerningGroup = O;
 },
 {
 glyphname = dieresiscomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -97181,7 +96676,6 @@ unicode = 0308;
 },
 {
 glyphname = dotaccentcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -97318,7 +96812,6 @@ unicode = 0307;
 },
 {
 glyphname = gravecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -97439,7 +96932,6 @@ unicode = 0300;
 },
 {
 glyphname = acutecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -97560,7 +97052,6 @@ unicode = 0301;
 },
 {
 glyphname = hungarumlautcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -97733,7 +97224,6 @@ unicode = 030B;
 },
 {
 glyphname = caroncomb.alt;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -97813,7 +97303,6 @@ rightKerningGroup = caroncomb.alt;
 },
 {
 glyphname = circumflexcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -97966,7 +97455,6 @@ unicode = 0302;
 },
 {
 glyphname = caroncomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -98119,7 +97607,6 @@ unicode = 030C;
 },
 {
 glyphname = brevecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -98280,7 +97767,6 @@ unicode = 0306;
 },
 {
 glyphname = ringcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -98485,7 +97971,6 @@ unicode = 030A;
 },
 {
 glyphname = tildecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -98670,7 +98155,6 @@ unicode = 0303;
 },
 {
 glyphname = macroncomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -98815,7 +98299,6 @@ unicode = 0304;
 },
 {
 glyphname = hookabovecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99000,7 +98483,6 @@ unicode = 0309;
 },
 {
 glyphname = dblgravecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99173,7 +98655,6 @@ unicode = 030F;
 },
 {
 glyphname = breveinvertedcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99334,7 +98815,6 @@ unicode = 0311;
 },
 {
 glyphname = commaturnedabovecomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99503,7 +98983,6 @@ unicode = 0312;
 },
 {
 glyphname = horncomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99632,7 +99111,6 @@ unicode = 031B;
 },
 {
 glyphname = dotbelowcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99769,7 +99247,6 @@ unicode = 0323;
 },
 {
 glyphname = dieresisbelowcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -99974,7 +99451,6 @@ unicode = 0324;
 },
 {
 glyphname = commaaccentcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -100175,7 +99651,6 @@ width = 615;
 },
 {
 glyphname = cedillacomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -100384,7 +99859,6 @@ unicode = 0327;
 },
 {
 glyphname = ogonekcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -100545,7 +100019,6 @@ unicode = 0328;
 },
 {
 glyphname = brevebelowcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -100706,7 +100179,6 @@ unicode = 032E;
 },
 {
 glyphname = macronbelowcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -100851,7 +100323,6 @@ unicode = 0331;
 },
 {
 glyphname = strokeshortcomb;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -100980,7 +100451,6 @@ unicode = 0335;
 },
 {
 glyphname = commaaccentcomb.alt;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -101180,7 +100650,6 @@ width = 615;
 },
 {
 glyphname = dieresiscomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -101384,7 +100853,6 @@ rightKerningGroup = dieresiscomb.case;
 },
 {
 glyphname = dotaccentcomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -101520,7 +100988,6 @@ rightKerningGroup = dotaccentcomb.case;
 },
 {
 glyphname = gravecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -101640,7 +101107,6 @@ rightKerningGroup = gravecomb.case;
 },
 {
 glyphname = acutecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -101760,7 +101226,6 @@ rightKerningGroup = acutecomb.case;
 },
 {
 glyphname = hungarumlautcomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -101932,7 +101397,6 @@ rightKerningGroup = hungarumlautcomb.case;
 },
 {
 glyphname = circumflexcomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -102084,7 +101548,6 @@ rightKerningGroup = circumflexcomb.case;
 },
 {
 glyphname = caroncomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -102236,7 +101699,6 @@ rightKerningGroup = caroncomb.case;
 },
 {
 glyphname = brevecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -102396,7 +101858,6 @@ rightKerningGroup = brevecomb.case;
 },
 {
 glyphname = ringcomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -102600,7 +102061,6 @@ rightKerningGroup = ringcomb.case;
 },
 {
 glyphname = tildecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -102784,7 +102244,6 @@ rightKerningGroup = tildecomb.case;
 },
 {
 glyphname = macroncomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -102928,7 +102387,6 @@ rightKerningGroup = macroncomb.case;
 },
 {
 glyphname = hookabovecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103112,7 +102570,6 @@ rightKerningGroup = hookabovecomb.case;
 },
 {
 glyphname = dblgravecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103284,7 +102741,6 @@ rightKerningGroup = dblgravecomb.case;
 },
 {
 glyphname = breveinvertedcomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103444,7 +102900,6 @@ rightKerningGroup = breveinvertedcomb.case;
 },
 {
 glyphname = commaturnedabovecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103614,7 +103069,6 @@ rightKerningGroup = commaturnedabovecomb.case;
 color = 9;
 export = 0;
 glyphname = dieresiscomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103772,7 +103226,6 @@ rightKerningGroup = dieresiscomb;
 color = 9;
 export = 0;
 glyphname = dotaccentcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103879,7 +103332,6 @@ rightKerningGroup = dotaccentcomb;
 color = 9;
 export = 0;
 glyphname = gravecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -103974,7 +103426,6 @@ rightKerningGroup = gravecomb;
 color = 9;
 export = 0;
 glyphname = acutecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104069,7 +103520,6 @@ rightKerningGroup = acutecomb;
 color = 9;
 export = 0;
 glyphname = hungarumlautcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104203,7 +103653,6 @@ rightKerningGroup = hungarumlautcomb;
 color = 9;
 export = 0;
 glyphname = caroncomb.alt.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -104268,7 +103717,6 @@ rightKerningGroup = caroncomb.alt;
 color = 9;
 export = 0;
 glyphname = circumflexcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104387,7 +103835,6 @@ rightKerningGroup = circumflexcomb;
 color = 9;
 export = 0;
 glyphname = caroncomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104506,7 +103953,6 @@ rightKerningGroup = caroncomb;
 color = 9;
 export = 0;
 glyphname = brevecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104631,7 +104077,6 @@ rightKerningGroup = brevecomb;
 color = 9;
 export = 0;
 glyphname = ringcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104789,7 +104234,6 @@ rightKerningGroup = ringcomb;
 color = 9;
 export = 0;
 glyphname = tildecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -104932,7 +104376,6 @@ rightKerningGroup = tildecomb;
 color = 9;
 export = 0;
 glyphname = macroncomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105045,7 +104488,6 @@ rightKerningGroup = macroncomb;
 color = 9;
 export = 0;
 glyphname = hookabovecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105188,7 +104630,6 @@ rightKerningGroup = hookabovecomb;
 color = 9;
 export = 0;
 glyphname = dblgravecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105322,7 +104763,6 @@ rightKerningGroup = dblgravecomb;
 color = 9;
 export = 0;
 glyphname = breveinvertedcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105447,7 +104887,6 @@ rightKerningGroup = breveinvertedcomb;
 color = 9;
 export = 0;
 glyphname = commaturnedabovecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105578,7 +105017,6 @@ rightKerningGroup = commaturnedabovecomb;
 color = 9;
 export = 0;
 glyphname = horncomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105679,7 +105117,6 @@ rightKerningGroup = horncomb;
 color = 9;
 export = 0;
 glyphname = dotbelowcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105786,7 +105223,6 @@ rightKerningGroup = dotbelowcomb;
 color = 9;
 export = 0;
 glyphname = dieresisbelowcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -105944,7 +105380,6 @@ rightKerningGroup = dieresisbelowcomb;
 color = 9;
 export = 0;
 glyphname = commaaccentcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106107,7 +105542,6 @@ width = 615;
 color = 9;
 export = 0;
 glyphname = cedillacomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106268,7 +105702,6 @@ rightKerningGroup = cedillacomb;
 color = 9;
 export = 0;
 glyphname = ogonekcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106393,7 +105826,6 @@ rightKerningGroup = ogonekcomb;
 color = 9;
 export = 0;
 glyphname = brevebelowcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106518,7 +105950,6 @@ rightKerningGroup = brevebelowcomb;
 color = 9;
 export = 0;
 glyphname = macronbelowcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106631,7 +106062,6 @@ rightKerningGroup = macronbelowcomb;
 color = 9;
 export = 0;
 glyphname = strokeshortcomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106732,7 +106162,6 @@ rightKerningGroup = strokeshortcomb;
 color = 9;
 export = 0;
 glyphname = commaaccentcomb.alt.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -106895,7 +106324,6 @@ width = 615;
 color = 9;
 export = 0;
 glyphname = dieresiscomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107053,7 +106481,6 @@ rightKerningGroup = dieresiscomb.case;
 color = 9;
 export = 0;
 glyphname = dotaccentcomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107160,7 +106587,6 @@ rightKerningGroup = dotaccentcomb.case;
 color = 9;
 export = 0;
 glyphname = gravecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107255,7 +106681,6 @@ rightKerningGroup = gravecomb.case;
 color = 9;
 export = 0;
 glyphname = acutecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107350,7 +106775,6 @@ rightKerningGroup = acutecomb.case;
 color = 9;
 export = 0;
 glyphname = hungarumlautcomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107484,7 +106908,6 @@ rightKerningGroup = hungarumlautcomb.case;
 color = 9;
 export = 0;
 glyphname = circumflexcomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107603,7 +107026,6 @@ rightKerningGroup = circumflexcomb.case;
 color = 9;
 export = 0;
 glyphname = caroncomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107722,7 +107144,6 @@ rightKerningGroup = caroncomb.case;
 color = 9;
 export = 0;
 glyphname = brevecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -107847,7 +107268,6 @@ rightKerningGroup = brevecomb.case;
 color = 9;
 export = 0;
 glyphname = ringcomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108005,7 +107425,6 @@ rightKerningGroup = ringcomb.case;
 color = 9;
 export = 0;
 glyphname = tildecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108148,7 +107567,6 @@ rightKerningGroup = tildecomb.case;
 color = 9;
 export = 0;
 glyphname = macroncomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108261,7 +107679,6 @@ rightKerningGroup = macroncomb.case;
 color = 9;
 export = 0;
 glyphname = hookabovecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108404,7 +107821,6 @@ rightKerningGroup = hookabovecomb.case;
 color = 9;
 export = 0;
 glyphname = dblgravecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108538,7 +107954,6 @@ rightKerningGroup = dblgravecomb.case;
 color = 9;
 export = 0;
 glyphname = breveinvertedcomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108663,7 +108078,6 @@ rightKerningGroup = breveinvertedcomb.case;
 color = 9;
 export = 0;
 glyphname = commaturnedabovecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -108792,7 +108206,6 @@ rightKerningGroup = commaturnedabovecomb.case;
 },
 {
 glyphname = apostrophemod;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -108921,7 +108334,6 @@ unicode = 02BC;
 },
 {
 glyphname = commaturnedmod;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -109090,7 +108502,6 @@ unicode = 02BB;
 },
 {
 glyphname = firsttonechinese;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -109195,7 +108606,6 @@ unicode = 02C9;
 },
 {
 glyphname = fourthtonechinese;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -109316,7 +108726,6 @@ unicode = 02CB;
 },
 {
 glyphname = ringhalfleft;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -109461,7 +108870,6 @@ unicode = 02BF;
 },
 {
 glyphname = ringhalfright;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -109606,7 +109014,6 @@ unicode = 02BE;
 },
 {
 glyphname = secondtonechinese;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 anchors = (
@@ -109727,7 +109134,6 @@ unicode = 02CA;
 },
 {
 glyphname = verticallinelowmod;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -109832,7 +109238,6 @@ unicode = 02CC;
 },
 {
 glyphname = verticallinemod;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -109937,7 +109342,6 @@ unicode = 02C8;
 },
 {
 glyphname = ringhalfleft.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110081,7 +109485,6 @@ rightKerningGroup = ringhalfleft.case;
 },
 {
 glyphname = ringhalfright.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110227,7 +109630,6 @@ rightKerningGroup = ringhalfright.case;
 color = 9;
 export = 0;
 glyphname = apostrophemod.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -110328,7 +109730,6 @@ rightKerningGroup = apostrophemod;
 color = 9;
 export = 0;
 glyphname = ringhalfleft.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110441,7 +109842,6 @@ rightKerningGroup = ringhalfleft.case;
 color = 9;
 export = 0;
 glyphname = ringhalfright.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110554,7 +109954,6 @@ rightKerningGroup = ringhalfright.case;
 color = 9;
 export = 0;
 glyphname = commaturnedmod.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110685,7 +110084,6 @@ rightKerningGroup = commaturnedmod;
 color = 9;
 export = 0;
 glyphname = firsttonechinese.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -110768,7 +110166,6 @@ rightKerningGroup = firsttonechinese;
 color = 9;
 export = 0;
 glyphname = fourthtonechinese.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110863,7 +110260,6 @@ rightKerningGroup = fourthtonechinese;
 color = 9;
 export = 0;
 glyphname = ringhalfleft.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -110976,7 +110372,6 @@ rightKerningGroup = ringhalfleft;
 color = 9;
 export = 0;
 glyphname = ringhalfright.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -111089,7 +110484,6 @@ rightKerningGroup = ringhalfright;
 color = 9;
 export = 0;
 glyphname = secondtonechinese.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -111184,7 +110578,6 @@ rightKerningGroup = secondtonechinese;
 color = 9;
 export = 0;
 glyphname = verticallinelowmod.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -111267,7 +110660,6 @@ rightKerningGroup = verticallinelowmod;
 color = 9;
 export = 0;
 glyphname = verticallinemod.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 background = {
@@ -111348,7 +110740,6 @@ rightKerningGroup = verticallinemod;
 },
 {
 glyphname = acute;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111389,7 +110780,6 @@ unicode = 00B4;
 },
 {
 glyphname = breve;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111430,7 +110820,6 @@ unicode = 02D8;
 },
 {
 glyphname = caron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111471,7 +110860,6 @@ unicode = 02C7;
 },
 {
 glyphname = cedilla;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111512,7 +110900,6 @@ unicode = 00B8;
 },
 {
 glyphname = circumflex;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111553,7 +110940,6 @@ unicode = 02C6;
 },
 {
 glyphname = dieresis;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111594,7 +110980,6 @@ unicode = 00A8;
 },
 {
 glyphname = dotaccent;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111635,7 +111020,6 @@ unicode = 02D9;
 },
 {
 glyphname = grave;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111676,7 +111060,6 @@ unicode = 0060;
 },
 {
 glyphname = hungarumlaut;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111717,7 +111100,6 @@ unicode = 02DD;
 },
 {
 glyphname = macron;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111758,7 +111140,6 @@ unicode = 00AF;
 },
 {
 glyphname = ogonek;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111799,7 +111180,6 @@ unicode = 02DB;
 },
 {
 glyphname = ring;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111840,7 +111220,6 @@ unicode = 02DA;
 },
 {
 glyphname = tilde;
-lastChange = "2016-09-26 12:25:33 +0000";
 layers = (
 {
 background = {
@@ -111881,7 +111260,6 @@ unicode = 02DC;
 },
 {
 glyphname = caron.alt;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -111947,7 +111325,6 @@ rightKerningGroup = caroncomb.alt;
 color = 9;
 export = 0;
 glyphname = acute.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112023,7 +111400,6 @@ rightKerningGroup = acutecomb;
 color = 9;
 export = 0;
 glyphname = caron.alt.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112096,7 +111472,6 @@ rightKerningGroup = caroncomb.alt;
 color = 9;
 export = 0;
 glyphname = breve.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112192,7 +111567,6 @@ rightKerningGroup = brevecomb;
 color = 9;
 export = 0;
 glyphname = caron.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112284,7 +111658,6 @@ rightKerningGroup = caroncomb;
 color = 9;
 export = 0;
 glyphname = cedilla.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112404,7 +111777,6 @@ rightKerningGroup = cedillacomb;
 color = 9;
 export = 0;
 glyphname = circumflex.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112496,7 +111868,6 @@ rightKerningGroup = circumflexcomb;
 color = 9;
 export = 0;
 glyphname = dieresis.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112614,7 +111985,6 @@ rightKerningGroup = dieresiscomb;
 color = 9;
 export = 0;
 glyphname = dotaccent.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112698,7 +112068,6 @@ rightKerningGroup = dotaccentcomb;
 color = 9;
 export = 0;
 glyphname = grave.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112774,7 +112143,6 @@ rightKerningGroup = gravecomb;
 color = 9;
 export = 0;
 glyphname = hungarumlaut.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112876,7 +112244,6 @@ rightKerningGroup = hungarumlautcomb;
 color = 9;
 export = 0;
 glyphname = macron.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -112964,7 +112331,6 @@ rightKerningGroup = macroncomb;
 color = 9;
 export = 0;
 glyphname = ogonek.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -113060,7 +112426,6 @@ rightKerningGroup = ogonekcomb;
 color = 9;
 export = 0;
 glyphname = ring.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -113178,7 +112543,6 @@ rightKerningGroup = ringcomb;
 color = 9;
 export = 0;
 glyphname = tilde.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -113284,7 +112648,6 @@ rightKerningGroup = tildecomb;
 },
 {
 glyphname = brevecomb_acutecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -113496,7 +112859,6 @@ rightKerningGroup = acutecomb;
 },
 {
 glyphname = brevecomb_gravecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -113708,7 +113070,6 @@ rightKerningGroup = gravecomb;
 },
 {
 glyphname = brevecomb_hookabovecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -113984,7 +113345,6 @@ rightKerningGroup = hookabovecomb;
 },
 {
 glyphname = brevecomb_tildecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -114260,7 +113620,6 @@ rightKerningGroup = tildecomb;
 },
 {
 glyphname = circumflexcomb_acutecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -114464,7 +113823,6 @@ rightKerningGroup = acutecomb;
 },
 {
 glyphname = circumflexcomb_gravecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -114668,7 +114026,6 @@ rightKerningGroup = gravecomb;
 },
 {
 glyphname = circumflexcomb_hookabovecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -114936,7 +114293,6 @@ rightKerningGroup = hookabovecomb;
 },
 {
 glyphname = circumflexcomb_tildecomb;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -115204,7 +114560,6 @@ rightKerningGroup = tildecomb;
 },
 {
 glyphname = brevecomb_acutecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -115416,7 +114771,6 @@ rightKerningGroup = acutecomb.case;
 },
 {
 glyphname = brevecomb_gravecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -115628,7 +114982,6 @@ rightKerningGroup = gravecomb.case;
 },
 {
 glyphname = brevecomb_hookabovecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -115904,7 +115257,6 @@ rightKerningGroup = hookabovecomb.case;
 },
 {
 glyphname = brevecomb_tildecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -116180,7 +115532,6 @@ rightKerningGroup = tildecomb.case;
 },
 {
 glyphname = circumflexcomb_acutecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -116384,7 +115735,6 @@ rightKerningGroup = acutecomb.case;
 },
 {
 glyphname = circumflexcomb_gravecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -116588,7 +115938,6 @@ rightKerningGroup = gravecomb.case;
 },
 {
 glyphname = circumflexcomb_hookabovecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -116856,7 +116205,6 @@ rightKerningGroup = hookabovecomb.case;
 },
 {
 glyphname = circumflexcomb_tildecomb.case;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -117126,7 +116474,6 @@ rightKerningGroup = tildecomb.case;
 color = 9;
 export = 0;
 glyphname = brevecomb_acutecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -117290,7 +116637,6 @@ rightKerningGroup = acutecomb;
 color = 9;
 export = 0;
 glyphname = brevecomb_gravecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -117454,7 +116800,6 @@ rightKerningGroup = gravecomb;
 color = 9;
 export = 0;
 glyphname = brevecomb_hookabovecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -117666,7 +117011,6 @@ rightKerningGroup = hookabovecomb;
 color = 9;
 export = 0;
 glyphname = brevecomb_tildecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -117878,7 +117222,6 @@ rightKerningGroup = tildecomb;
 color = 9;
 export = 0;
 glyphname = brevecomb_acutecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -118042,7 +117385,6 @@ rightKerningGroup = acutecomb.case;
 color = 9;
 export = 0;
 glyphname = brevecomb_gravecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -118206,7 +117548,6 @@ rightKerningGroup = gravecomb.case;
 color = 9;
 export = 0;
 glyphname = brevecomb_hookabovecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -118418,7 +117759,6 @@ rightKerningGroup = hookabovecomb.case;
 color = 9;
 export = 0;
 glyphname = brevecomb_tildecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -118630,7 +117970,6 @@ rightKerningGroup = tildecomb.case;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_acutecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -118788,7 +118127,6 @@ rightKerningGroup = acutecomb.case;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_gravecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -118946,7 +118284,6 @@ rightKerningGroup = gravecomb.case;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_hookabovecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -119152,7 +118489,6 @@ rightKerningGroup = hookabovecomb.case;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_tildecomb.case.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -119358,7 +118694,6 @@ rightKerningGroup = tildecomb.case;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_acutecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -119516,7 +118851,6 @@ rightKerningGroup = acutecomb;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_gravecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -119674,7 +119008,6 @@ rightKerningGroup = gravecomb;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_hookabovecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -119880,7 +119213,6 @@ rightKerningGroup = hookabovecomb;
 color = 9;
 export = 0;
 glyphname = circumflexcomb_tildecomb.bold;
-lastChange = "2016-09-26 13:13:53 +0000";
 layers = (
 {
 anchors = (
@@ -120084,7 +119416,6 @@ rightKerningGroup = tildecomb;
 },
 {
 glyphname = NULL;
-lastChange = "2016-10-13 14:18:54 +0000";
 layers = (
 {
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -120112,8 +119443,8 @@ value = 275;
 );
 interpolationWeight = 42;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = -0.117647;
 "9E718F8A-2CEA-4931-B05D-987794BD97DA" = 1.11765;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = -0.11765;
 };
 name = ExtraLight;
 weightClass = ExtraLight;
@@ -120127,8 +119458,8 @@ value = AddExtremes;
 );
 interpolationWeight = 61;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.0686275;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.931373;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.93137;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.06863;
 };
 name = Light;
 weightClass = Light;
@@ -120142,8 +119473,8 @@ value = AddExtremes;
 );
 interpolationWeight = 81;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.264706;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.735294;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.73529;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.26471;
 };
 name = Regular;
 },
@@ -120156,8 +119487,8 @@ value = AddExtremes;
 );
 interpolationWeight = 101;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.460784;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.539216;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.53922;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.46078;
 };
 name = SemiBold;
 weightClass = SemiBold;
@@ -120171,8 +119502,8 @@ value = AddExtremes;
 );
 interpolationWeight = 125;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.696078;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.303922;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.30392;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.69608;
 };
 isBold = 1;
 name = Bold;
@@ -120187,8 +119518,8 @@ value = AddExtremes;
 );
 interpolationWeight = 151;
 instanceInterpolations = {
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.04902;
 "E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 0.95098;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = 0.0490196;
 };
 name = ExtraBold;
 weightClass = ExtraBold;
@@ -120202,8 +119533,8 @@ value = AddExtremes;
 );
 interpolationWeight = 178;
 instanceInterpolations = {
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.21569;
 "E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.21569;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.215686;
 };
 name = Black;
 weightClass = Black;
@@ -120357,8 +119688,8 @@ value = "Nunito Heavy";
 );
 interpolationWeight = 208;
 instanceInterpolations = {
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.5098;
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.509804;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.50980;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.50980;
 };
 name = Regular;
 }
