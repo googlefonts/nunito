@@ -1,5 +1,5 @@
 {
-.appVersion = "1057";
+.appVersion = "1075";
 classes = (
 {
 automatic = 1;
@@ -41,6 +41,10 @@ value = 1;
 {
 name = "Use Line Breaks";
 value = 1;
+},
+{
+name = "TTFAutohint options";
+value = "--detailed-info";
 }
 );
 date = "2016-09-26 20:06:44 +0000";
