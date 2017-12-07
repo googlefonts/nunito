@@ -13,3 +13,4 @@ vernon adams <vernnobile@gmail.com>
 Jacques Le Bailly <fonthausen@baronvonfonthausen.com>
 Lasse Fister <commander@graphicore.de>
 Marc Foley <m.foley.88@gmail.com>
+Alexei Vanyashin <a@cyreal.org>
