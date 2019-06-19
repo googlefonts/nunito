@@ -1,7 +1,8 @@
 {
-.appVersion = "1075";
+.appVersion = "1230";
 DisplayStrings = (
-"/Hastroke-cy/hastroke-cy/Ustraitstroke-cy/ustraitstroke-cy"
+"/Hastroke-cy/hastroke-cy/Ustraitstroke-cy/ustraitstroke-cy",
+"/fl/fl/Schwadieresis-cy/gje-cy/gje-cy"
 );
 classes = (
 {
@@ -56162,9 +56163,11 @@ transform = "{1, 0, 0, 1, 310, 0}";
 };
 components = (
 {
+alignment = -1;
 name = f;
 },
 {
+alignment = -1;
 name = l;
 transform = "{1, 0, 0, 1, 310, 0}";
 }
@@ -56186,9 +56189,11 @@ transform = "{1, 0, 0, 1, 379, 0}";
 };
 components = (
 {
+alignment = -1;
 name = f;
 },
 {
+alignment = -1;
 name = l;
 transform = "{1, 0, 0, 1, 379, 0}";
 }
@@ -58758,6 +58763,7 @@ position = "{69, 353}";
 hints = (
 {
 place = "{380.713, 0}";
+type = Stem;
 }
 );
 layerId = "E1B555A7-F4E1-459C-9C1A-AE952106EEF9";
@@ -58850,6 +58856,7 @@ position = "{69, 353}";
 hints = (
 {
 place = "{380.713, 0}";
+type = Stem;
 },
 {
 origin = "{0, 9}";
@@ -59111,6 +59118,7 @@ transform = "{1, 0, 0, 1, 563, 0}";
 hints = (
 {
 place = "{380.713, 0}";
+type = Stem;
 }
 );
 layerId = "E1B555A7-F4E1-459C-9C1A-AE952106EEF9";
@@ -65578,6 +65586,7 @@ hints = (
 {
 horizontal = 1;
 place = "{232.379, 0}";
+type = Stem;
 }
 );
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -70764,6 +70773,7 @@ hints = (
 {
 horizontal = 1;
 place = "{232.379, 0}";
+type = Stem;
 }
 );
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -71295,9 +71305,11 @@ transform = "{1, 0, 0, 1, 223, 0}";
 color = -1;
 components = (
 {
+alignment = -1;
 name = "Schwa-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb.case;
 transform = "{1, 0, 0, 1, 223, 0}";
 }
@@ -75330,9 +75342,11 @@ layers = (
 {
 components = (
 {
+alignment = -1;
 name = "ge-cy";
 },
 {
+alignment = -1;
 name = acutecomb;
 transform = "{1, 0, 0, 1, 55, -4}";
 }
@@ -75355,9 +75369,11 @@ transform = "{1, 0, 0, 1, 79, -5}";
 color = -1;
 components = (
 {
+alignment = -1;
 name = "ge-cy";
 },
 {
+alignment = -1;
 name = acutecomb;
 transform = "{1, 0, 0, 1, 77, -5}";
 }
@@ -159173,6 +159189,7 @@ hints = (
 {
 horizontal = 1;
 place = "{232.379, 0}";
+type = Stem;
 }
 );
 layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
@@ -159663,8 +159680,8 @@ value = "Transformations; LSB:+10; RSB:+10; include: a-cy, be-cy, ve-cy, ge-cy, 
 );
 interpolationWeight = 208;
 instanceInterpolations = {
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.50980;
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.50980;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.5098;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.5098;
 };
 name = Regular;
 }
