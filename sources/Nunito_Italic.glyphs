@@ -1,5 +1,5 @@
 {
-.appVersion = "1075";
+.appVersion = "1271";
 classes = (
 {
 automatic = 1;
@@ -43,7 +43,7 @@ name = "Use Line Breaks";
 value = 1;
 }
 );
-date = "2018-02-28 07:38:14 +0000";
+date = "2018-07-25 08:32:23 +0000";
 designer = "Vernon Adams";
 designerURL = "http://newtypography.co.uk";
 disablesNiceNames = 1;
@@ -406,11 +406,11 @@ value = 0;
 },
 {
 name = winAscent;
-value = 1088;
+value = 1092;
 },
 {
 name = winDescent;
-value = 275;
+value = 281;
 },
 {
 name = hheaAscender;
@@ -482,14 +482,6 @@ name = typoLineGap;
 value = 0;
 },
 {
-name = winAscent;
-value = 1088;
-},
-{
-name = winDescent;
-value = 275;
-},
-{
 name = hheaAscender;
 value = 1011;
 },
@@ -508,6 +500,14 @@ value = 50;
 {
 name = hheaLineGap;
 value = 0;
+},
+{
+name = winAscent;
+value = 1092;
+},
+{
+name = winDescent;
+value = 281;
 }
 );
 descender = -180;
@@ -53570,9 +53570,11 @@ transform = "{1, 0, 0, 1, 310, 0}";
 };
 components = (
 {
+alignment = -1;
 name = f;
 },
 {
+alignment = -1;
 name = l;
 transform = "{1, 0, 0, 1, 310, 0}";
 }
@@ -54870,9 +54872,11 @@ layers = (
 {
 components = (
 {
+alignment = -1;
 name = "Ge-cy";
 },
 {
+alignment = -1;
 name = acutecomb.case;
 transform = "{1, 0, 0, 1, 141, 0}";
 }
@@ -54894,9 +54898,11 @@ transform = "{1, 0, 0, 1, 204, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "Ge-cy";
 },
 {
+alignment = -1;
 name = acutecomb.case;
 transform = "{1, 0, 0, 1, 141, 0}";
 }
@@ -55310,9 +55316,11 @@ transform = "{1, 0, 0, 1, 177, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "Ie-cy";
 },
 {
+alignment = -1;
 name = gravecomb.case;
 transform = "{1, 0, 0, 1, 169, 0}";
 }
@@ -55355,9 +55363,11 @@ transform = "{1, 0, 0, 1, 177, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "Ie-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb.case;
 transform = "{1, 0, 0, 1, 169, 0}";
 }
@@ -56036,6 +56046,7 @@ position = "{78, 353}";
 hints = (
 {
 place = "{380.713, 0}";
+type = Stem;
 }
 );
 layerId = "E1B555A7-F4E1-459C-9C1A-AE952106EEF9";
@@ -56341,9 +56352,11 @@ transform = "{1, 0, 0, 1, 540, 0}";
 hints = (
 {
 place = "{380.713, 0}";
+type = Stem;
 },
 {
 place = "{380.713, 0}";
+type = Stem;
 }
 );
 layerId = "E1B555A7-F4E1-459C-9C1A-AE952106EEF9";
@@ -67890,9 +67903,11 @@ transform = "{1, 0, 0, 1, 118, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "A-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy.case";
 transform = "{1, 0, 0, 1, 111, 0}";
 }
@@ -67935,9 +67950,11 @@ transform = "{1, 0, 0, 1, 227, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "A-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb.case;
 transform = "{1, 0, 0, 1, 215, 0}";
 }
@@ -68015,9 +68032,11 @@ transform = "{1, 0, 0, 1, 68, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "Ie-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy.case";
 transform = "{1, 0, 0, 1, 65, 0}";
 }
@@ -68933,9 +68952,11 @@ transform = "{1, 0, 0, 1, 245, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "Obarred-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb.case;
 transform = "{1, 0, 0, 1, 209, 0}";
 }
@@ -68978,9 +68999,11 @@ transform = "{1, 0, 0, 1, 131, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "Ereversed-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb.case;
 transform = "{1, 0, 0, 1, 151, 4}";
 }
@@ -72237,9 +72260,11 @@ layers = (
 {
 components = (
 {
+alignment = -1;
 name = "ge-cy";
 },
 {
+alignment = -1;
 name = acutecomb;
 transform = "{1, 0, 0, 1, 76, -5}";
 }
@@ -72261,9 +72286,11 @@ transform = "{1, 0, 0, 1, 104, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ge-cy";
 },
 {
+alignment = -1;
 name = acutecomb;
 transform = "{1, 0, 0, 1, 75, -4}";
 }
@@ -72767,9 +72794,11 @@ layers = (
 {
 components = (
 {
+alignment = -1;
 name = "ie-cy";
 },
 {
+alignment = -1;
 name = gravecomb;
 transform = "{1, 0, 0, 1, 112, -5}";
 }
@@ -72791,9 +72820,11 @@ transform = "{1, 0, 0, 1, 116, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ie-cy";
 },
 {
+alignment = -1;
 name = gravecomb;
 transform = "{1, 0, 0, 1, 97, -4}";
 }
@@ -73854,9 +73885,11 @@ transform = "{1, 0, 0, 1, 91, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "ii-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy";
 transform = "{1, 0, 0, 1, 66, 0}";
 }
@@ -73899,9 +73932,11 @@ transform = "{1, 0, 0, 1, 171, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ii-cy";
 },
 {
+alignment = -1;
 name = gravecomb;
 transform = "{1, 0, 0, 1, 154, -4}";
 }
@@ -74295,9 +74330,11 @@ layers = (
 {
 components = (
 {
+alignment = -1;
 name = "ka-cy";
 },
 {
+alignment = -1;
 name = acutecomb;
 transform = "{1, 0, 0, 1, 91, -5}";
 }
@@ -74319,9 +74356,11 @@ transform = "{1, 0, 0, 1, 142, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ka-cy";
 },
 {
+alignment = -1;
 name = acutecomb;
 transform = "{1, 0, 0, 1, 156, -4}";
 }
@@ -75478,9 +75517,11 @@ transform = "{1, 0, 0, 1, 25, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "u-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy";
 transform = "{1, 0, 0, 1, 10, 0}";
 }
@@ -87480,9 +87521,11 @@ transform = "{1, 0, 0, 1, 41, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "a-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy";
 transform = "{1, 0, 0, 1, 16, 0}";
 }
@@ -87526,9 +87569,11 @@ transform = "{1, 0, 0, 1, 121, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "a-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb;
 transform = "{1, 0, 0, 1, 104, -4}";
 }
@@ -87582,9 +87627,11 @@ layers = (
 {
 components = (
 {
+alignment = -1;
 name = "ie-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy";
 transform = "{1, 0, 0, 1, 58, 0}";
 }
@@ -87606,9 +87653,11 @@ transform = "{1, 0, 0, 1, 36, 0}";
 };
 components = (
 {
+alignment = -1;
 name = "ie-cy";
 },
 {
+alignment = -1;
 name = "brevecomb-cy";
 transform = "{1, 0, 0, 1, 9, 0}";
 }
@@ -88322,9 +88371,11 @@ transform = "{1, 0, 0, 1, 171, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ii-cy";
 },
 {
+alignment = -1;
 name = macroncomb;
 transform = "{1, 0, 0, 1, 154, -4}";
 }
@@ -88367,9 +88418,11 @@ transform = "{1, 0, 0, 1, 171, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ii-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb;
 transform = "{1, 0, 0, 1, 154, -4}";
 }
@@ -88463,9 +88516,11 @@ position = "{340, 490}";
 hints = (
 {
 place = "{82, 54}";
+type = Stem;
 },
 {
 place = "{424, 54}";
+type = Stem;
 },
 {
 horizontal = 1;
@@ -88476,6 +88531,7 @@ type = BottomGhost;
 {
 horizontal = 1;
 place = "{448, 49}";
+type = Stem;
 },
 {
 horizontal = 1;
@@ -88832,9 +88888,11 @@ transform = "{1, 0, 0, 1, 92, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "ereversed-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb;
 transform = "{1, 0, 0, 1, 85, -4}";
 }
@@ -88878,9 +88936,11 @@ transform = "{1, 0, 0, 1, 105, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "u-cy";
 },
 {
+alignment = -1;
 name = macroncomb;
 transform = "{1, 0, 0, 1, 98, -4}";
 }
@@ -88924,9 +88984,11 @@ transform = "{1, 0, 0, 1, 105, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "u-cy";
 },
 {
+alignment = -1;
 name = dieresiscomb;
 transform = "{1, 0, 0, 1, 98, -4}";
 }
@@ -88970,9 +89032,11 @@ transform = "{1, 0, 0, 1, 105, -4}";
 };
 components = (
 {
+alignment = -1;
 name = "u-cy";
 },
 {
+alignment = -1;
 name = hungarumlautcomb;
 transform = "{1, 0, 0, 1, 98, -4}";
 }
@@ -123379,63 +123443,13 @@ nodes = (
 }
 );
 };
-layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
-paths = (
+components = (
 {
-closed = 1;
-nodes = (
-"264 0 LINE SMOOTH",
-"291 0 OFFCURVE",
-"310 25 OFFCURVE",
-"292 55 CURVE SMOOTH",
-"175 247 OFFCURVE",
-"131 345 OFFCURVE",
-"131 440 CURVE SMOOTH",
-"131 573 OFFCURVE",
-"225 663 OFFCURVE",
-"412 663 CURVE SMOOTH",
-"567 663 OFFCURVE",
-"667 589 OFFCURVE",
-"667 459 CURVE SMOOTH",
-"667 375 OFFCURVE",
-"622 284 OFFCURVE",
-"444 53 CURVE SMOOTH",
-"425 25 OFFCURVE",
-"438 0 OFFCURVE",
-"467 0 CURVE SMOOTH",
-"666 0 LINE SMOOTH",
-"681 0 OFFCURVE",
-"690 11 OFFCURVE",
-"690 24 CURVE SMOOTH",
-"690 37 OFFCURVE",
-"681 48 OFFCURVE",
-"666 48 CURVE SMOOTH",
-"473 48 LINE",
-"478 28 LINE",
-"676 270 OFFCURVE",
-"724 355 OFFCURVE",
-"724 462 CURVE SMOOTH",
-"724 619 OFFCURVE",
-"601 713 OFFCURVE",
-"413 713 CURVE SMOOTH",
-"195 713 OFFCURVE",
-"74 601 OFFCURVE",
-"74 435 CURVE SMOOTH",
-"74 338 OFFCURVE",
-"112 254 OFFCURVE",
-"254 28 CURVE",
-"263 48 LINE",
-"66 48 LINE SMOOTH",
-"51 48 OFFCURVE",
-"42 37 OFFCURVE",
-"42 24 CURVE SMOOTH",
-"42 11 OFFCURVE",
-"51 0 OFFCURVE",
-"66 0 CURVE SMOOTH"
-);
+name = Delta;
 }
 );
-width = 766;
+layerId = "9E718F8A-2CEA-4931-B05D-987794BD97DA";
+width = 718;
 },
 {
 background = {
@@ -123481,63 +123495,13 @@ nodes = (
 }
 );
 };
-layerId = "E1B555A7-F4E1-459C-9C1A-AE952106EEF9";
-paths = (
+components = (
 {
-closed = 1;
-nodes = (
-"284 0 LINE SMOOTH",
-"347 0 OFFCURVE",
-"377 59 OFFCURVE",
-"344 125 CURVE SMOOTH",
-"252 301 OFFCURVE",
-"222 374 OFFCURVE",
-"222 432 CURVE SMOOTH",
-"222 533 OFFCURVE",
-"298 589 OFFCURVE",
-"434 589 CURVE SMOOTH",
-"557 589 OFFCURVE",
-"623 543 OFFCURVE",
-"623 459 CURVE SMOOTH",
-"623 393 OFFCURVE",
-"589 327 OFFCURVE",
-"452 125 CURVE SMOOTH",
-"411 66 OFFCURVE",
-"426 0 OFFCURVE",
-"492 0 CURVE SMOOTH",
-"673 0 LINE SMOOTH",
-"727 0 OFFCURVE",
-"754 21 OFFCURVE",
-"754 71 CURVE SMOOTH",
-"754 108 OFFCURVE",
-"730 129 OFFCURVE",
-"683 129 CURVE SMOOTH",
-"583 129 LINE",
-"557 83 LINE",
-"689 240 OFFCURVE",
-"785 349 OFFCURVE",
-"785 462 CURVE SMOOTH",
-"785 621 OFFCURVE",
-"654 715 OFFCURVE",
-"434 715 CURVE SMOOTH",
-"203 715 OFFCURVE",
-"61 606 OFFCURVE",
-"61 439 CURVE SMOOTH",
-"61 350 OFFCURVE",
-"98 277 OFFCURVE",
-"233 83 CURVE",
-"213 129 LINE",
-"113 129 LINE SMOOTH",
-"59 129 OFFCURVE",
-"32 109 OFFCURVE",
-"32 61 CURVE SMOOTH",
-"32 22 OFFCURVE",
-"55 0 OFFCURVE",
-"103 0 CURVE SMOOTH"
-);
+name = Delta;
 }
 );
-width = 814;
+layerId = "E1B555A7-F4E1-459C-9C1A-AE952106EEF9";
+width = 753;
 }
 );
 leftKerningGroup = Omega;
@@ -152619,8 +152583,8 @@ value = "Transformations; LSB:+10; RSB:+10; include: a-cy, be-cy, ve-cy, ge-cy, 
 );
 interpolationWeight = 208;
 instanceInterpolations = {
-"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.50980;
-"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.50980;
+"9E718F8A-2CEA-4931-B05D-987794BD97DA" = -0.5098;
+"E1B555A7-F4E1-459C-9C1A-AE952106EEF9" = 1.5098;
 };
 isItalic = 1;
 name = Italic;
@@ -155257,5 +155221,5 @@ manufacturer = newtypography;
 manufacturerURL = "http://newtypography.co.uk";
 unitsPerEm = 1000;
 versionMajor = 3;
-versionMinor = 502;
+versionMinor = 504;
 }
