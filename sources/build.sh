@@ -1,39 +1,39 @@
-TTFDIR=./fonts/TTF
-# VFDIR=./Fonts/ttf-variable
-mkdir -p $TTFDIR
-# mkdir -p $VFDIR
-rm -r $TTFDIR/*.ttf
-# rm -r $VFDIR/*.ttf
+#!/bin/sh
+set -e
 
 # Build static instances
-fontmake -g "./sources/Nunito.glyphs" -o ttf -i --output-dir $TTFDIR -a
-# fontmake -g "./Sources/Petrona-ITALIC-MASTER.glyphs" -o ttf -i --output-dir $TTFDIR -a
+TTFDIR=../fonts/TTF
+mkdir -p $TTFDIR
+rm -rf $TTFDIR/*.ttf
+fontmake -g "./Nunito.glyphs" -o ttf -i --output-dir $TTFDIR -a
 for f in $TTFDIR/*.ttf
 do
 	echo Processing $f
 	gftools fix-dsig --autofix $f
+	ttfautohint $f $f.fix
+	mv $f.fix $f
 	gftools fix-hinting $f
 	mv $f.fix $f
 done
 
-# set -e
+
+## Not implemented yet:
+
 # # Build variable font
+# VFDIR=../Fonts/ttf-variable
+# mkdir -p $VFDIR
+# rm -rf $VFDIR/*.ttf
 # VF_FILENAME="$VFDIR/Petrona[wght].ttf"
 # fontmake -g "./Sources/Petrona-ROMAN-MASTER.glyphs" -o variable --output-path $VF_FILENAME
 # gftools fix-dsig --autofix $VF_FILENAME
-# ttfautohint $VF_FILENAME $VF_FILENAME.fix
-# mv $VF_FILENAME.fix $VF_FILENAME
-# gftools fix-hinting $VF_FILENAME
+# gftools fix-nonhinting $VF_FILENAME
 # mv $VF_FILENAME.fix $VF_FILENAME
 
 # VF_FILENAME="$VFDIR/Petrona-Italic[wght].ttf"
 # fontmake -g "./Sources/Petrona-ITALIC-MASTER.glyphs" -o variable --output-path $VF_FILENAME
 # gftools fix-dsig --autofix $VF_FILENAME
-# ttfautohint $VF_FILENAME $VF_FILENAME.fix
-# mv $VF_FILENAME.fix $VF_FILENAME
-# gftools fix-hinting $VF_FILENAME
+# gftools fix-nonhinting $VF_FILENAME
 # mv $VF_FILENAME.fix $VF_FILENAME
 
 # Clean up
-rm -r instance_ufo
-rm -r master_ufo
+rm -rf master_ufo/ instance_ufo/
