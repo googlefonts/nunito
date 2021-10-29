@@ -1,39 +1,12 @@
 #!/bin/sh
 set -e
 
-# Build static instances
-TTFDIR=../fonts/TTF
-mkdir -p $TTFDIR
-rm -rf $TTFDIR/*.ttf
-fontmake -g "./Nunito.glyphs" -o ttf -i --output-dir $TTFDIR -a
-for f in $TTFDIR/*.ttf
-do
-	echo Processing $f
-	gftools fix-dsig --autofix $f
-	ttfautohint $f $f.fix
-	mv $f.fix $f
-	gftools fix-hinting $f
-	mv $f.fix $f
-done
+# Build with gftools builder
+gftools builder sources/builder.yaml
 
+# Slice into Roman and Italic VF (as Google Fonts currently doesn't support slnt or ital axes)
+fonttools varLib.instancer "fonts/variable/Nunito[ital,wght].ttf" ital=0 wght=200:1000 --update-name-table -o "fonts/variable//Nunito[wght].ttf"
+fonttools varLib.instancer "fonts/variable/Nunito[ital,wght].ttf" ital=1 wght=200:1000 --update-name-table -o "fonts/variable/Nunito-Italic[wght].ttf"
 
-## Not implemented yet:
-
-# # Build variable font
-# VFDIR=../Fonts/ttf-variable
-# mkdir -p $VFDIR
-# rm -rf $VFDIR/*.ttf
-# VF_FILENAME="$VFDIR/Petrona[wght].ttf"
-# fontmake -g "./Sources/Petrona-ROMAN-MASTER.glyphs" -o variable --output-path $VF_FILENAME
-# gftools fix-dsig --autofix $VF_FILENAME
-# gftools fix-nonhinting $VF_FILENAME
-# mv $VF_FILENAME.fix $VF_FILENAME
-
-# VF_FILENAME="$VFDIR/Petrona-Italic[wght].ttf"
-# fontmake -g "./Sources/Petrona-ITALIC-MASTER.glyphs" -o variable --output-path $VF_FILENAME
-# gftools fix-dsig --autofix $VF_FILENAME
-# gftools fix-nonhinting $VF_FILENAME
-# mv $VF_FILENAME.fix $VF_FILENAME
-
-# Clean up
-rm -rf master_ufo/ instance_ufo/
+# Remove original
+rm "fonts/variable/Nunito[ital,wght].ttf"
