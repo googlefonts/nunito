@@ -5,16 +5,15 @@ from fontbakery.constants import (
     FsSelection,
 )
 
-
 if __name__ == "__main__":
 
-    for font_path in glob.glob("fonts/variable/*Italic*.ttf"):
-        # set windows subfamily name to Italic in name table
-        # For Urbanist-Italic, set ttFont["head"].macStyle = MacStyle.ITALIC
-        # Change OS/2.fsSelection to 0x0081
+    for font_path in glob.glob("../fonts/variable/*Italic*.ttf"):
         with open(font_path, "rb") as f:
             print("Fix italic naming in {}".format(font_path))
             ttFont = TTFont(f)
             ttFont["head"].macStyle = MacStyle.ITALIC
             ttFont["OS/2"].fsSelection = FsSelection.USETYPOMETRICS | FsSelection.ITALIC
+            ttFont["post"].italicAngle = -9
+            ttFont["hhea"].caretSlopeRise = 1000
+            ttFont["hhea"].caretSlopeRun = 158
             ttFont.save(font_path)
