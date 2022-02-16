@@ -15,3 +15,4 @@ Lasse Fister <commander@graphicore.de>
 Marc Foley <m.foley.88@gmail.com>
 Alexei Vanyashin <a@cyreal.org>
 Yanone <post@yanone.de>
+Rosalie Wagner <mail@rosaliewagner.com>
